@@ -1,0 +1,4 @@
+bruto/
+*.log
+.DS_Store
+.vscode/

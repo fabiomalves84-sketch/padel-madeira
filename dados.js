@@ -1,0 +1,324 @@
+// Gerado por atualizar.py. Nao editar a mao.
+window.DADOS = {
+  "atualizado": null,
+  "nota": "Precos e horarios marcados como nao confirmados vêm de fontes secundarias. A maioria dos clubes da Madeira nao publica precos na web aberta: estao dentro das apps de reserva, atras de login.",
+  "clubes": [
+    {
+      "id": "quinta-do-padel",
+      "nome": "Quinta do Padel",
+      "concelho": "Funchal",
+      "morada": "Rampa da Quinta do Leme 14A, 9020-316 Funchal",
+      "coords": [
+        32.6598,
+        -16.9142
+      ],
+      "campos": 5,
+      "cobertos": 3,
+      "telefone": "931103927",
+      "email": "comercial@quintadopadel.pt",
+      "plataforma": "App própria",
+      "url_reserva": "https://quintadopadel.pt/Pages/65-reservas",
+      "url_site": "https://quintadopadel.pt",
+      "pagamento": [
+        "online",
+        "mbway",
+        "balcao"
+      ],
+      "pagamento_confirmado": true,
+      "preco": {
+        "min": 32,
+        "max": 32,
+        "unidade": "1h30 (campo inteiro)",
+        "confirmado": false
+      },
+      "duracao_slot": 90,
+      "horario": [
+        [
+          "09:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "24:00"
+        ],
+        [
+          "08:00",
+          "24:00"
+        ],
+        [
+          "08:00",
+          "24:00"
+        ],
+        [
+          "08:00",
+          "24:00"
+        ],
+        [
+          "08:00",
+          "24:00"
+        ],
+        [
+          "09:00",
+          "22:30"
+        ]
+      ],
+      "horario_confirmado": false,
+      "disponibilidade": {},
+      "nota_clube": "Cancelamento: gratuito até 12h antes; 50% entre 6h e 12h; 100% com menos de 6h ou falta."
+    },
+    {
+      "id": "play-padel-madeira",
+      "nome": "Play Padel Madeira",
+      "concelho": "Funchal",
+      "morada": "Rua Dr. Pita, São Martinho, 9000-089 Funchal",
+      "coords": [
+        32.6489,
+        -16.9316
+      ],
+      "campos": 3,
+      "cobertos": null,
+      "telefone": null,
+      "email": "info@playpadelmadeira.pt",
+      "plataforma": "MatchPoint",
+      "url_reserva": "https://playpadelmadeira-pt.matchpoint.com.es/Booking/Grid.aspx",
+      "url_site": "https://playpadelmadeira.pt",
+      "pagamento": [
+        "online",
+        "balcao"
+      ],
+      "pagamento_confirmado": false,
+      "preco": null,
+      "duracao_slot": 90,
+      "horario": [
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ]
+      ],
+      "horario_confirmado": true,
+      "disponibilidade": {}
+    },
+    {
+      "id": "centro-padel-lazer",
+      "nome": "Centro de Padel e Lazer",
+      "concelho": "Funchal",
+      "morada": "Funchal (estacionamento gratuito)",
+      "coords": [
+        32.6669,
+        -16.9241
+      ],
+      "campos": 3,
+      "cobertos": 3,
+      "telefone": null,
+      "email": null,
+      "plataforma": "Playtomic / Aircourts",
+      "url_reserva": "https://playtomic.io/centro-de-padel-e-lazer/bde4f48e-3176-42e5-aa1e-ee383be8d564",
+      "url_site": "https://www.aircourts.com/index.php/site/view_club/centro-de-padel-e-lazer",
+      "pagamento": [
+        "online"
+      ],
+      "pagamento_confirmado": false,
+      "preco": {
+        "min": 15,
+        "max": 30,
+        "unidade": "1h30",
+        "confirmado": false
+      },
+      "duracao_slot": 90,
+      "horario": [
+        null,
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ]
+      ],
+      "horario_confirmado": false,
+      "disponibilidade": {},
+      "playtomic_tenant_id": "bde4f48e-3176-42e5-aa1e-ee383be8d564",
+      "aircourts_slug": "centro-de-padel-e-lazer"
+    },
+    {
+      "id": "padel-centro-canico",
+      "nome": "Padel Centro Caniço",
+      "concelho": "Santa Cruz",
+      "morada": "Impasse Estrada do Livramento, Caniço",
+      "coords": [
+        32.6499,
+        -16.846
+      ],
+      "campos": 3,
+      "cobertos": null,
+      "telefone": "291934621",
+      "email": null,
+      "plataforma": "TieSports / Aircourts",
+      "url_reserva": "https://clubs.tiesports.com/en/madeira/PadelCentroCanico",
+      "url_site": "https://www.aircourts.com/index.php/site/view_club//padel-centro-canico",
+      "pagamento": [
+        "online",
+        "balcao"
+      ],
+      "pagamento_confirmado": false,
+      "preco": null,
+      "duracao_slot": 90,
+      "horario": [
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "disponibilidade": {},
+      "aircourts_slug": "padel-centro-canico"
+    },
+    {
+      "id": "jardim-panoramico",
+      "nome": "Jardins Panorâmicos do Lido",
+      "concelho": "Funchal",
+      "morada": "Jardim Panorâmico, Lido, Funchal",
+      "coords": [
+        32.6376,
+        -16.9333
+      ],
+      "campos": 3,
+      "cobertos": 0,
+      "telefone": "961687191",
+      "email": null,
+      "plataforma": "Field",
+      "url_reserva": "https://getfield.app/fields/2KgZc5oW1hHd1aWiE5Q4",
+      "url_site": "https://frentemarfunchal.pt/jardins-e-passeio-publico-maritimo/jardim-panoramico/",
+      "pagamento": [
+        "online"
+      ],
+      "pagamento_confirmado": false,
+      "preco": null,
+      "duracao_slot": 90,
+      "horario": [
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ],
+        [
+          "08:00",
+          "22:30"
+        ]
+      ],
+      "horario_confirmado": false,
+      "disponibilidade": {}
+    },
+    {
+      "id": "quinta-magnolia",
+      "nome": "Quinta Magnólia",
+      "concelho": "Funchal",
+      "morada": "Quinta Magnólia, Rua do Dr. Pita, Funchal",
+      "coords": [
+        32.6503,
+        -16.928
+      ],
+      "campos": 3,
+      "cobertos": null,
+      "telefone": "291145788",
+      "email": null,
+      "plataforma": "SIMplifica (Governo Regional)",
+      "url_reserva": "https://simplifica.madeira.gov.pt/services/7-22-102",
+      "url_site": "https://simplifica.madeira.gov.pt/",
+      "pagamento": [
+        "online"
+      ],
+      "pagamento_confirmado": false,
+      "preco": null,
+      "duracao_slot": 60,
+      "horario": null,
+      "horario_confirmado": false,
+      "nota_clube": "Parque da Quinta Magnólia (Governo Regional). Reserva só pelo portal SIMplifica, com registo prévio. Horário e preço não publicados online. Não confundir com o hotel quintamagnolia.com.",
+      "disponibilidade": {}
+    }
+  ]
+};
