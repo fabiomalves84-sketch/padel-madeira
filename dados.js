@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-10T22:10:17.538960+01:00",
+  "atualizado": "2026-09-10T22:16:25.721723+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -3014,7 +3014,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-10T22:10:07.162538+01:00"
+      "disponibilidade_em": "2026-09-10T22:16:16.966769+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -3029,8 +3029,8 @@ window.DADOS = {
       "cobertos": 3,
       "telefone": "291647790",
       "email": null,
-      "plataforma": "Playtomic / Aircourts",
-      "url_reserva": "https://playtomic.io/centro-de-padel-e-lazer/bde4f48e-3176-42e5-aa1e-ee383be8d564",
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/clubs/centro-de-padel-e-lazer",
       "url_site": "https://www.aircourts.com/index.php/site/view_club/centro-de-padel-e-lazer",
       "pagamento": [
         "balcao"
@@ -3079,7 +3079,7 @@ window.DADOS = {
       "aircourts_slug": "centro-de-padel-e-lazer",
       "aircourts_club_id": 353,
       "aircourts_sport_id": 4,
-      "nota_clube": "Pagamento no campo, à chegada e sempre antes de jogar: dinheiro, cheque ou multibanco. Cancelamento com 48h de antecedência. Relvado sintético, LED, estacionamento gratuito. Reserva até 10 dias de antecedência."
+      "nota_clube": "Pagamento no campo, à chegada e sempre antes de jogar: dinheiro, cheque ou multibanco. Cancelamento com 48h de antecedência. Relvado sintético, LED, estacionamento gratuito. Reserva até 10 dias de antecedência. Migrado do Aircourts para o Playtomic (confirmado em set/2026)."
     },
     {
       "id": "padel-centro-canico",
@@ -5174,7 +5174,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-10T22:10:17.538894+01:00"
+      "disponibilidade_em": "2026-09-10T22:16:25.721639+01:00"
     },
     {
       "id": "quinta-magnolia",
@@ -5245,8 +5245,8 @@ window.DADOS = {
       "cobertos": 0,
       "telefone": "291950120",
       "email": null,
-      "plataforma": "Aircourts",
-      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/centro-desportivo-da-madeira",
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/clubs/centro-desportivo-da-madeira",
       "url_site": null,
       "pagamento": [
         "balcao"
@@ -5292,7 +5292,7 @@ window.DADOS = {
       "horario_confirmado": true,
       "aircourts_club_id": 386,
       "aircourts_sport_id": 4,
-      "nota_clube": "Reserva até 15 dias de antecedência. Campos descobertos.",
+      "nota_clube": "Reserva até 15 dias de antecedência. Campos descobertos. Migrado do Aircourts para o Playtomic (confirmado em set/2026).",
       "disponibilidade": {}
     },
     {
@@ -5308,8 +5308,8 @@ window.DADOS = {
       "cobertos": 0,
       "telefone": "916598064",
       "email": null,
-      "plataforma": "Aircourts",
-      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/padel-porto-de-recreio-da-calheta",
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/clubs/padel-porto-de-recreio-da-calheta",
       "url_site": null,
       "pagamento": [
         "balcao"
@@ -5355,7 +5355,7 @@ window.DADOS = {
       "horario_confirmado": true,
       "aircourts_club_id": 522,
       "aircourts_sport_id": 4,
-      "nota_clube": "Dinheiro e multibanco, a pagar sempre antes de jogar na receção do Porto de Recreio. Reserva até 14 dias.",
+      "nota_clube": "Dinheiro e multibanco, a pagar sempre antes de jogar na receção do Porto de Recreio. Reserva até 14 dias. Migrado do Aircourts para o Playtomic (confirmado em set/2026).",
       "disponibilidade": {}
     },
     {
@@ -5371,8 +5371,8 @@ window.DADOS = {
       "cobertos": 0,
       "telefone": "291983274",
       "email": null,
-      "plataforma": "Aircourts",
-      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/complexo-de-tenis-e-padel-do-porto-santo",
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/clubs/complexo-de-tenis-e-padel-do-porto-santo",
       "url_site": null,
       "pagamento": [
         "balcao"
@@ -5418,7 +5418,7 @@ window.DADOS = {
       "horario_confirmado": true,
       "aircourts_club_id": 566,
       "aircourts_sport_id": 4,
-      "nota_clube": "Dinheiro e transferência bancária. Reserva até 7 dias. O mais barato da região.",
+      "nota_clube": "Dinheiro e transferência bancária. Reserva até 7 dias. O mais barato da região. Migrado do Aircourts para o Playtomic (confirmado em set/2026).",
       "disponibilidade": {}
     },
     {
@@ -5434,8 +5434,8 @@ window.DADOS = {
       "cobertos": 0,
       "telefone": "291980800",
       "email": null,
-      "plataforma": "Aircourts",
-      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/padel-vila-baleira",
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/clubs/padel-vila-baleira",
       "url_site": null,
       "pagamento": [
         "balcao",
@@ -5482,7 +5482,7 @@ window.DADOS = {
       "horario_confirmado": true,
       "aircourts_club_id": 643,
       "aircourts_sport_id": 4,
-      "nota_clube": "Dinheiro, multibanco e MB Way. Aberto das 07:00 à meia-noite todos os dias. Reserva até 14 dias.",
+      "nota_clube": "Dinheiro, multibanco e MB Way. Aberto das 07:00 à meia-noite todos os dias. Reserva até 14 dias. Migrado do Aircourts para o Playtomic (confirmado em set/2026).",
       "disponibilidade": {}
     },
     {
