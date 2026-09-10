@@ -284,6 +284,35 @@ td.cel{padding:0 2px}
            'Tens de confirmar se há campo livre na plataforma dele.</div>';
   }
 
+  // ---------- grelha para clubes sem disponibilidade publicada ----------
+  function grelhaIncerta(clube, data, agoraMin, eHoje){
+    if(!clube.horario)
+      return '<div class="aviso">'+(clube.nota_clube || 'Horário não publicado.')+'</div>';
+    const hr = clube.horario[data.getDay()];
+    if(!hr) return '<div class="fechado">Fechado neste dia.</div>';
+    if(soLivres) return '<div class="fechado">Sem vagas confirmadas publicamente neste clube.</div>';
+
+    const ini = min(hr[0]);
+    const fim = hr[1]==='24:00' ? 1440 : min(hr[1]);
+    const nCampos = clube.campos || 1;
+    let h = '<div class="gridwrap"><table class="grelha"><thead><tr><th class="hcol"></th>';
+    for(let i=0;i<nCampos;i++) h += '<th>Campo '+(i+1)+'</th>';
+    h += '</tr></thead><tbody>';
+
+    for(let t=ini; t+duracao<=fim; t+=30){
+      const passado = eHoje && t <= agoraMin;
+      h += '<tr><td class="hora">'+hhmm(t)+'</td>';
+      for(let i=0;i<nCampos;i++){
+        h += '<td class="cel"><button data-t="'+t+'" data-c="'+i+'" data-e="incerto"'+
+             (passado ? ' class="passado" disabled>passou' : ' class="incerto">confirmar')+
+             '</button></td>';
+      }
+      h += '</tr>';
+    }
+    return h + '</tbody></table></div>'+
+      '<div class="aviso">A plataforma deste clube não publica a ocupação. Confirma antes de reservar.</div>';
+  }
+
   // ---------- render ----------
   function render(){
     const data = dataDe(diaSel), chave = iso(data);
@@ -294,6 +323,7 @@ td.cel{padding:0 2px}
 
     const clubes = D.clubes
       .filter(c => concelho==='Todos' || c.concelho===concelho)
+      .filter(c => !soLivres || (c.disponibilidade && c.disponibilidade[chave]))
       .slice().sort((a,b) => {
         const ta = a.disponibilidade && a.disponibilidade[chave] ? 0 : 1;
         const tb = b.disponibilidade && b.disponibilidade[chave] ? 0 : 1;
@@ -327,11 +357,11 @@ td.cel{padding:0 2px}
         if(temNoutrosDias){
           const ate = Object.keys(c.disponibilidade).sort().pop();
           const d2 = new Date(ate+'T12:00:00');
-          h += resumoHorario(c, data);
+          h += grelhaIncerta(c, data, agoraMin, eHoje);
           h += '<div class="aviso">Este clube só publica disponibilidade até '+
                d2.getDate()+' '+MESES[d2.getMonth()]+'. Para lá disso, só o horário.</div>';
         } else {
-          h += resumoHorario(c, data);
+          h += grelhaIncerta(c, data, agoraMin, eHoje);
         }
       }
       const plat = c.plataforma.split(' /')[0].split(' (')[0];
@@ -342,7 +372,8 @@ td.cel{padding:0 2px}
       card.querySelectorAll('button[data-t]').forEach(b => {
         b.onclick = () => {
           const idx = b.dataset.c;
-          const nomeCampo = (g && idx!=null) ? g.campos[+idx].nome : null;
+          const nomeCampo = (g && idx!=null) ? g.campos[+idx].nome
+            : (idx!=null ? 'Campo '+(+idx+1) : null);
           abrir(c, data, +b.dataset.t, nomeCampo, b.dataset.e);
         };
       });
