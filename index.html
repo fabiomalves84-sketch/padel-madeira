@@ -172,8 +172,8 @@ td.cel{padding:0 2px}
   // ---------- dias ----------
   const elDias = document.getElementById('dias');
   // quantos dias mostrar: o maximo que houver em dados, ate 15
-  const N_DIAS = Math.min(15, Math.max(7, ...D.clubes.map(c =>
-    Object.keys(c.disponibilidade || {}).length || 0)));
+  const N_DIAS = Math.max(7, ...D.clubes.map(c =>
+    Object.keys(c.disponibilidade || {}).length || 0));
   for(let i=0;i<N_DIAS;i++){
     const d = dataDe(i);
     const b = document.createElement('button');
@@ -321,7 +321,16 @@ td.cel{padding:0 2px}
         if(velho) h += '<div class="aviso"><b>Atenção:</b> esta grelha foi recolhida há '+
           idade(horas)+' e as reservas mudam a toda a hora. Confirma na plataforma antes de contares com um horário.</div>';
       } else {
-        h += resumoHorario(c, data);
+        const temNoutrosDias = c.disponibilidade && Object.keys(c.disponibilidade).length;
+        if(temNoutrosDias){
+          const ate = Object.keys(c.disponibilidade).sort().pop();
+          const d2 = new Date(ate+'T12:00:00');
+          h += resumoHorario(c, data);
+          h += '<div class="aviso">Este clube só publica disponibilidade até '+
+               d2.getDate()+' '+MESES[d2.getMonth()]+'. Para lá disso, só o horário.</div>';
+        } else {
+          h += resumoHorario(c, data);
+        }
       }
       const plat = c.plataforma.split(' /')[0].split(' (')[0];
       const rot = /App pr/.test(plat) ? 'Abrir reservas do clube' : 'Abrir '+plat;

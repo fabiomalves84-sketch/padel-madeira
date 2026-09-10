@@ -2,7 +2,7 @@
 """
 Atualiza a disponibilidade real e regenera o dados.js que a app lê.
 
-    python3 atualizar.py        # próximos 15 dias
+    python3 atualizar.py        # o maximo que cada clube permitir
 
 Estado das plataformas, a 10 de setembro de 2026:
 
@@ -24,7 +24,12 @@ import pathlib
 import sys
 
 AQUI = pathlib.Path(__file__).parent
-DIAS = 15
+# Cada clube tem a sua antecedencia maxima de reserva. Recolhe-se o que cada
+# um deixa, em vez de cortar todos pelo mais curto.
+DIAS_POR_CLUBE = {
+    "play-padel-madeira": 30,   # MatchPoint publico, aceita ate 30 dias
+}
+DIAS_OMISSAO = 15
 
 LEITORES = {}
 try:
@@ -48,8 +53,9 @@ def main():
             # apagar aqui destruiria esse trabalho a cada execucao.
             continue
 
+        limite = DIAS_POR_CLUBE.get(clube["id"], DIAS_OMISSAO)
         disp = {}
-        for i in range(DIAS):
+        for i in range(limite):
             data = hoje + datetime.timedelta(days=i)
             try:
                 g = leitor(data)

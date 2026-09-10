@@ -21,7 +21,10 @@ Abre `http://localhost:8000`. No iPhone, na mesma rede Wi-Fi, usa o IP do Mac
 python3 atualizar.py
 ```
 
-Atualiza o **Play Padel Madeira**, que é público. Corre isto antes de usares a
+Atualiza o **Play Padel Madeira**, que é público, e recolhe o máximo que ele
+permite: 30 dias. Cada clube tem a sua antecedência de reserva, definida em
+`DIAS_POR_CLUBE` no `atualizar.py`. A app mostra na barra tantos dias quantos
+existirem, e avisa quando um clube deixa de ter alcance nesse dia. Corre isto antes de usares a
 app, ou agenda com launchd.
 
 A **Quinta do Padel** não pode ser atualizada por aqui: exige sessão iniciada e
