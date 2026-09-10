@@ -7,7 +7,8 @@ Atualiza a disponibilidade real e regenera o dados.js que a app lê.
 Estado das plataformas, a 10 de setembro de 2026:
 
   Play Padel Madeira      MatchPoint   grelha pública, funciona
-  Quinta do Padel         MatchPoint   exige login, sem acesso
+  Quinta do Padel         MatchPoint   exige sessao iniciada; cookie HttpOnly,
+                                       recolhido a mao com um browser autenticado
   Centro de Padel e Lazer Aircourts    slots só com sessão, sem acesso
   Padel Centro Caniço     Aircourts    slots só com sessão, sem acesso
   Jardins Panorâmicos     Field        plataforma aparentemente encerrada

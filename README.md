@@ -21,21 +21,26 @@ Abre `http://localhost:8000`. No iPhone, na mesma rede Wi-Fi, usa o IP do Mac
 python3 atualizar.py
 ```
 
-Vai buscar a grelha do Play Padel Madeira para os próximos 7 dias e reescreve
-o `dados.js`. Corre isto antes de usares a app, ou agenda com launchd.
+Atualiza o **Play Padel Madeira**, que é público. Corre isto antes de usares a
+app, ou agenda com launchd.
+
+A **Quinta do Padel** não pode ser atualizada por aqui: exige sessão iniciada e
+o cookie de autenticação é HttpOnly, ou seja, não é acessível a partir da
+página. Os dados que lá estão foram recolhidos com uma sessão aberta num
+browser e ficam estáticos até serem recolhidos outra vez da mesma forma.
 
 ## Disponibilidade real: o que dá e o que não dá
 
 | Clube | Plataforma | Disponibilidade |
 |---|---|---|
 | Play Padel Madeira | MatchPoint | **Sim**, grelha pública |
-| Quinta do Padel | MatchPoint | Não, exige login |
+| Quinta do Padel | MatchPoint | **Sim, com sessão iniciada** |
 | Centro de Padel e Lazer | Aircourts | Não, slots só com sessão |
 | Padel Centro Caniço | Aircourts | Não, slots só com sessão |
 | Jardins Panorâmicos | Field | Plataforma aparentemente encerrada |
 | Quinta Magnólia | SIMplifica | Não, exige registo no portal |
 
-Um clube em seis publica disponibilidade sem login. Isto foi verificado, não
+Dois clubes em seis dão disponibilidade: o Play Padel Madeira sem login, a Quinta do Padel com sessão iniciada. São 8 campos dos 19 da ilha. Isto foi verificado, não
 suposto: o endpoint do Aircourts devolve `slots: []` para todos os clubes do
 país, incluindo os maiores de Lisboa e do Porto, e a Quinta do Padel devolve
 a página de login.
