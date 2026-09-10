@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-10T19:55:02.681745+01:00",
+  "atualizado": "2026-09-10T20:01:21.684124+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1150,6 +1150,10 @@ window.DADOS = {
                 [
                   "19:30",
                   "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
                 ]
               ]
             },
@@ -3210,7 +3214,7 @@ window.DADOS = {
         -16.928
       ],
       "campos": 3,
-      "cobertos": null,
+      "cobertos": 0,
       "telefone": "291145788",
       "email": null,
       "plataforma": "SIMplifica (Governo Regional)",
@@ -3222,9 +3226,38 @@ window.DADOS = {
       "pagamento_confirmado": false,
       "preco": null,
       "duracao_slot": 60,
-      "horario": null,
-      "horario_confirmado": false,
-      "nota_clube": "Parque da Quinta Magnólia (Governo Regional). Reserva só pelo portal SIMplifica, com registo prévio. Horário e preço não publicados online. Não confundir com o hotel quintamagnolia.com.",
+      "horario": [
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "nota_clube": "Parque da Quinta Magnólia (Governo Regional). Reserva pelo portal SIMplifica, com registo prévio. O espaço tem ainda 4 campos de ténis e 1 de squash. Domingos e feriados fecha às 20:00. Alterações e cancelamentos por email para quintamagnolia@madeira.gov.pt.",
       "disponibilidade": {}
     },
     {
@@ -3540,17 +3573,17 @@ window.DADOS = {
       "id": "lobos-park",
       "nome": "Lobos Park",
       "concelho": "Câmara de Lobos",
-      "morada": "Lobos Park, Câmara de Lobos",
+      "morada": "Parque Desportivo Lobos Park, Avenida Nova Cidade, junto à Ribeira do Vigário, Câmara de Lobos",
       "coords": [
         32.6506,
         -16.9776
       ],
-      "campos": null,
-      "cobertos": null,
+      "campos": 2,
+      "cobertos": 0,
       "telefone": null,
       "email": null,
-      "plataforma": "SIMplifica (Câmara Municipal)",
-      "url_reserva": "https://simplifica.madeira.gov.pt/services/3-53-297",
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/",
       "url_site": "https://www.cm-camaradelobos.pt/servicos/desporto/lobos-park/campos-de-padel-lobos-park",
       "pagamento": [
         "online"
@@ -3558,9 +3591,35 @@ window.DADOS = {
       "pagamento_confirmado": false,
       "preco": null,
       "duracao_slot": 60,
-      "horario": null,
-      "horario_confirmado": false,
-      "nota_clube": "Campos municipais. Reserva pelo portal SIMplifica, com registo prévio. Número de campos, horário e preço não publicados online.",
+      "horario": [
+        null,
+        [
+          "08:30",
+          "19:30"
+        ],
+        [
+          "08:30",
+          "19:30"
+        ],
+        [
+          "08:30",
+          "19:30"
+        ],
+        [
+          "08:30",
+          "19:30"
+        ],
+        [
+          "08:30",
+          "19:30"
+        ],
+        [
+          "08:30",
+          "19:30"
+        ]
+      ],
+      "horario_confirmado": true,
+      "nota_clube": "Desde 1 de setembro de 2026 a exploração passou a privada e as reservas deixaram de ser pelo SIMplifica: passaram para o Playtomic. Reserva com 24h de antecedência mínima, uma por dia, de 1h, 1h30 ou 2h. Encerrado domingos e feriados.",
       "disponibilidade": {}
     }
   ]
