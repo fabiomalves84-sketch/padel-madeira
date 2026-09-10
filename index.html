@@ -198,7 +198,7 @@ td.cel{padding:0 2px}
     concelhos.forEach(c => chip(c, concelho===c, ()=>{concelho=c;pintaFiltros();render();}));
     chip('1h', duracao===60, ()=>{duracao=60;pintaFiltros();render();});
     chip('1h30', duracao===90, ()=>{duracao=90;pintaFiltros();render();});
-    chip('Só livres', soLivres, ()=>{soLivres=!soLivres;pintaFiltros();render();});
+    chip('Só vagas', soLivres, ()=>{soLivres=!soLivres;pintaFiltros();render();});
   }
   pintaFiltros();
 
@@ -243,9 +243,9 @@ td.cel{padding:0 2px}
 
     let linhas = [];
     for(let t=ini; t+duracao<=fim; t+=passo){
-      if(eHoje && t <= agoraMin) continue;          // o passado não interessa
       const estados = ocupados.map(blocos =>
-        blocos.some(([a,b]) => t < b && t+duracao > a) ? 'ocupado' : 'livre');
+        blocos.some(([a,b]) => t < b && t+duracao > a) ? 'ocupado'
+          : (eHoje && t <= agoraMin ? 'passado' : 'livre'));
       if(soLivres && !estados.includes('livre')) continue;
       linhas.push([t, estados]);
     }
@@ -259,7 +259,9 @@ td.cel{padding:0 2px}
       h += '<tr><td class="hora">'+hhmm(t)+'</td>';
       estados.forEach((e,i) => {
         h += '<td class="cel"><button data-t="'+t+'" data-c="'+i+'" data-e="'+e+'"'+
-             (e==='ocupado' ? ' disabled' : '')+'>'+(e==='livre'?'livre':'')+'</button></td>';
+             (e==='passado' ? ' class="passado"' : '')+
+             (e!=='livre' ? ' disabled' : '')+'>'+
+             (e==='livre' ? 'livre' : e==='ocupado' ? 'ocupado' : 'passou')+'</button></td>';
       });
       h += '</tr>';
     });
@@ -359,9 +361,8 @@ td.cel{padding:0 2px}
   } else stamp.textContent = 'horários base';
 
   document.getElementById('disc').textContent =
-    'Um dos seis clubes publica disponibilidade em tempo real. Nos restantes, a grelha '+
-    'mostra apenas o horário de funcionamento e é preciso confirmar na plataforma do clube. '+
-    'Corre atualizar.py para refrescar os dados.';
+    'A grelha mostra todas as horas publicadas, com cada campo marcado como livre ou ocupado. '+
+    'Nos clubes sem dados em tempo real, confirma a disponibilidade na plataforma do clube.';
 
   render();
 })();
