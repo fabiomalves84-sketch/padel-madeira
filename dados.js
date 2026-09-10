@@ -951,7 +951,8 @@ window.DADOS = {
           ]
         }
       },
-      "nota_clube": "Reserva exige conta. Cancelamento gratuito até 12h antes, 50% entre 6h e 12h, 100% abaixo de 6h ou falta. 5 campos, todos cobertos. Reserva até 15 dias."
+      "nota_clube": "Reserva exige conta. Cancelamento gratuito até 12h antes, 50% entre 6h e 12h, 100% abaixo de 6h ou falta. 5 campos, todos cobertos. Reserva até 15 dias.",
+      "disponibilidade_em": "2026-09-10T16:55:35.736256+01:00"
     },
     {
       "id": "play-padel-madeira",
@@ -1566,7 +1567,8 @@ window.DADOS = {
             }
           ]
         }
-      }
+      },
+      "disponibilidade_em": "2026-09-10T16:55:35.736256+01:00"
     },
     {
       "id": "centro-padel-lazer",

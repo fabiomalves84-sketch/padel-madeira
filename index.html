@@ -19,6 +19,7 @@
   --incerto:#eef1ef;
 }
 @media (prefers-color-scheme:dark){
+  .badge.warn{background:#3a2f14;color:#e0bd6a}
   :root{
     --bg:#0e1412; --card:#171f1d; --ink:#e8efea; --muted:#8fa098; --line:#252f2b;
     --accent:#3fb787; --accent-soft:#16302561;
@@ -67,6 +68,7 @@ main{padding:14px 0 30px}
 .badges{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 4px}
 .badge{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--incerto);color:var(--muted)}
 .badge.pay{background:var(--accent-soft);color:var(--accent)}
+.badge.warn{background:#f5e6c8;color:#7a5a12;font-weight:600}
 .badge.live{background:var(--livre);color:var(--livre-ink);font-weight:600}
 
 /* grelha */
@@ -163,6 +165,9 @@ td.cel{padding:0 2px}
   const min = h => { const p = h.split(':'); return (+p[0])*60 + (+p[1]); };
   const hhmm = m => String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
   const dataDe = o => { const d = new Date(hoje); d.setDate(d.getDate()+o); return d; };
+  const idade = h => h < 48
+    ? Math.round(h)+(Math.round(h)===1?' hora':' horas')
+    : Math.round(h/24)+' dias';
 
   // ---------- dias ----------
   const elDias = document.getElementById('dias');
@@ -293,15 +298,23 @@ td.cel{padding:0 2px}
       const g = c.disponibilidade && c.disponibilidade[chave];
       const card = document.createElement('section'); card.className='club';
 
+      const horas = c.disponibilidade_em
+        ? (Date.now() - new Date(c.disponibilidade_em)) / 3.6e6 : null;
+      const velho = horas !== null && horas > 6;
+
       let h = '<h2>'+c.nome+'</h2><div class="sub">'+c.concelho+' · '+c.campos+' campos · '+c.plataforma+'</div>';
       h += '<div class="badges">';
-      if(g) h += '<span class="badge live">disponibilidade real</span>';
+      if(g) h += velho
+        ? '<span class="badge warn">dados de há '+idade(horas)+'</span>'
+        : '<span class="badge live">disponibilidade real</span>';
       (c.pagamento||[]).forEach(p => h += '<span class="badge pay">'+(PAG[p]||p)+'</span>');
       if(c.preco) h += '<span class="badge">'+c.preco.min+'€ / '+c.preco.unidade+'</span>';
       h += '</div>';
 
       if(g){
         h += grelhaReal(c, g, data, agoraMin, eHoje);
+        if(velho) h += '<div class="aviso"><b>Atenção:</b> esta grelha foi recolhida há '+
+          idade(horas)+' e as reservas mudam a toda a hora. Confirma na plataforma antes de contares com um horário.</div>';
       } else {
         h += resumoHorario(c, data);
       }
