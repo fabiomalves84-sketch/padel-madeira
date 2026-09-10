@@ -28,6 +28,7 @@ AQUI = pathlib.Path(__file__).parent
 # um deixa, em vez de cortar todos pelo mais curto.
 DIAS_POR_CLUBE = {
     "play-padel-madeira": 30,   # MatchPoint publico, aceita ate 30 dias
+    "jardim-panoramico": 15,    # Field publico
 }
 DIAS_OMISSAO = 15
 
@@ -37,6 +38,13 @@ try:
     LEITORES["play-padel-madeira"] = matchpoint.grelha
 except ImportError:
     print("aviso: matchpoint.py não encontrado, sem disponibilidade real",
+          file=sys.stderr)
+
+try:
+    import field
+    LEITORES["jardim-panoramico"] = field.grelha
+except ImportError:
+    print("aviso: field.py não encontrado, sem disponibilidade do Jardim Panorâmico",
           file=sys.stderr)
 
 
@@ -73,6 +81,8 @@ def main():
                 print(f"  {clube['id']} {data}: {type(e).__name__}: {e}",
                       file=sys.stderr)
         clube["disponibilidade"] = disp
+        if disp:
+            clube["disponibilidade_em"] = datetime.datetime.now().astimezone().isoformat()
         print(f"  {clube['id']}: {len(disp)} dias com disponibilidade real")
 
     d["atualizado"] = datetime.datetime.now().astimezone().isoformat()
