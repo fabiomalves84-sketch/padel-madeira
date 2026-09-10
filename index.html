@@ -213,7 +213,7 @@ td.cel{padding:0 2px}
     if(campo) kv.push(['Campo', campo]);
     kv.push(['Estado', estado==='livre' ? 'Livre agora'
       : estado==='ocupado' ? 'Ocupado' : 'Não publicado, confirma no clube']);
-    kv.push(['Campos', clube.campos + (clube.cobertos ? ' ('+clube.cobertos+' cobertos)' : '')]);
+    if(clube.campos) kv.push(['Campos', clube.campos + (clube.cobertos ? ' ('+clube.cobertos+' cobertos)' : '')]);
     if(clube.preco) kv.push(['Preço', clube.preco.min+'€ / '+clube.preco.unidade +
       (clube.preco.confirmado ? '' : ' (aprox.)')]);
     kv.push(['Pagamento', (clube.pagamento||[]).map(p=>PAG[p]||p).join(', ') +
@@ -302,7 +302,7 @@ td.cel{padding:0 2px}
         ? (Date.now() - new Date(c.disponibilidade_em)) / 3.6e6 : null;
       const velho = horas !== null && horas > 6;
 
-      let h = '<h2>'+c.nome+'</h2><div class="sub">'+c.concelho+' · '+c.campos+' campos · '+c.plataforma+'</div>';
+      let h = '<h2>'+c.nome+'</h2><div class="sub">'+c.concelho+' · '+(c.campos ? c.campos+' campos' : 'campos não publicados')+' · '+c.plataforma+'</div>';
       h += '<div class="badges">';
       if(g) h += velho
         ? '<span class="badge warn">dados de há '+idade(horas)+'</span>'

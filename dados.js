@@ -1,7 +1,7 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-10T16:52:58.169917+01:00",
-  "nota": "Os dois clubes do Aircourts (Centro de Padel e Lazer, Padel Centro Caniço) têm dados de fonte primária. Os outros quatro ainda têm campos por confirmar.",
+  "atualizado": "2026-09-10T17:02:15.472468+01:00",
+  "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
       "id": "quinta-do-padel",
@@ -1779,6 +1779,342 @@ window.DADOS = {
       "horario": null,
       "horario_confirmado": false,
       "nota_clube": "Parque da Quinta Magnólia (Governo Regional). Reserva só pelo portal SIMplifica, com registo prévio. Horário e preço não publicados online. Não confundir com o hotel quintamagnolia.com.",
+      "disponibilidade": {}
+    },
+    {
+      "id": "centro-desportivo-madeira",
+      "nome": "Centro Desportivo da Madeira",
+      "concelho": "Ribeira Brava",
+      "morada": "Centro Desportivo da Madeira, VE4 65, Ribeira Brava",
+      "coords": [
+        32.6969443,
+        -17.0511474
+      ],
+      "campos": 2,
+      "cobertos": 0,
+      "telefone": "291950120",
+      "email": null,
+      "plataforma": "Aircourts",
+      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/centro-desportivo-da-madeira",
+      "url_site": null,
+      "pagamento": [
+        "balcao"
+      ],
+      "pagamento_confirmado": false,
+      "preco": {
+        "min": 6,
+        "max": 6,
+        "unidade": "hora (campo inteiro)",
+        "confirmado": true
+      },
+      "duracao_slot": 60,
+      "horario": [
+        [
+          "08:00",
+          "15:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "09:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "21:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "aircourts_club_id": 386,
+      "aircourts_sport_id": 4,
+      "nota_clube": "Reserva até 15 dias de antecedência. Campos descobertos.",
+      "disponibilidade": {}
+    },
+    {
+      "id": "padel-calheta",
+      "nome": "Padel Porto de Recreio da Calheta",
+      "concelho": "Calheta",
+      "morada": "Porto de Recreio da Calheta, Av. D. Manuel I, 9370-135 Estreito da Calheta",
+      "coords": [
+        32.7370174,
+        -17.1717719
+      ],
+      "campos": 2,
+      "cobertos": 0,
+      "telefone": "916598064",
+      "email": null,
+      "plataforma": "Aircourts",
+      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/padel-porto-de-recreio-da-calheta",
+      "url_site": null,
+      "pagamento": [
+        "balcao"
+      ],
+      "pagamento_confirmado": true,
+      "preco": {
+        "min": 6,
+        "max": 6,
+        "unidade": "hora (campo inteiro)",
+        "confirmado": true
+      },
+      "duracao_slot": 60,
+      "horario": [
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "aircourts_club_id": 522,
+      "aircourts_sport_id": 4,
+      "nota_clube": "Dinheiro e multibanco, a pagar sempre antes de jogar na receção do Porto de Recreio. Reserva até 14 dias.",
+      "disponibilidade": {}
+    },
+    {
+      "id": "porto-santo-tenis",
+      "nome": "Complexo de Ténis e Padel do Porto Santo",
+      "concelho": "Porto Santo",
+      "morada": "Estrada Regional 111, 9400-242 Porto Santo",
+      "coords": [
+        33.0463978,
+        -16.3574866
+      ],
+      "campos": 2,
+      "cobertos": 0,
+      "telefone": "291983274",
+      "email": null,
+      "plataforma": "Aircourts",
+      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/complexo-de-tenis-e-padel-do-porto-santo",
+      "url_site": null,
+      "pagamento": [
+        "balcao"
+      ],
+      "pagamento_confirmado": true,
+      "preco": {
+        "min": 5,
+        "max": 5,
+        "unidade": "hora (campo inteiro)",
+        "confirmado": true
+      },
+      "duracao_slot": 60,
+      "horario": [
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "20:00"
+        ],
+        [
+          "09:00",
+          "20:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "aircourts_club_id": 566,
+      "aircourts_sport_id": 4,
+      "nota_clube": "Dinheiro e transferência bancária. Reserva até 7 dias. O mais barato da região.",
+      "disponibilidade": {}
+    },
+    {
+      "id": "padel-vila-baleira",
+      "nome": "Padel Vila Baleira",
+      "concelho": "Porto Santo",
+      "morada": "Estrada Regional 120, Cabeço da Ponta, 9401-909 Porto Santo",
+      "coords": [
+        33.0373675,
+        -16.3638556
+      ],
+      "campos": 4,
+      "cobertos": 0,
+      "telefone": "291980800",
+      "email": null,
+      "plataforma": "Aircourts",
+      "url_reserva": "https://www.aircourts.com/index.php/site/view_club/padel-vila-baleira",
+      "url_site": null,
+      "pagamento": [
+        "balcao",
+        "mbway"
+      ],
+      "pagamento_confirmado": true,
+      "preco": {
+        "min": 12,
+        "max": 12,
+        "unidade": "hora (campo inteiro)",
+        "confirmado": true
+      },
+      "duracao_slot": 60,
+      "horario": [
+        [
+          "07:00",
+          "24:00"
+        ],
+        [
+          "07:00",
+          "24:00"
+        ],
+        [
+          "07:00",
+          "24:00"
+        ],
+        [
+          "07:00",
+          "24:00"
+        ],
+        [
+          "07:00",
+          "24:00"
+        ],
+        [
+          "07:00",
+          "24:00"
+        ],
+        [
+          "07:00",
+          "24:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "aircourts_club_id": 643,
+      "aircourts_sport_id": 4,
+      "nota_clube": "Dinheiro, multibanco e MB Way. Aberto das 07:00 à meia-noite todos os dias. Reserva até 14 dias.",
+      "disponibilidade": {}
+    },
+    {
+      "id": "nexo-padel-club",
+      "nome": "Nexo Padel Club",
+      "concelho": "Câmara de Lobos",
+      "morada": "Pavilhão Marcos Freitas, Rua das Vinhas 9, 9325-051 Câmara de Lobos",
+      "coords": [
+        32.6503,
+        -16.9772
+      ],
+      "campos": 2,
+      "cobertos": 0,
+      "telefone": null,
+      "email": null,
+      "plataforma": "Playtomic",
+      "url_reserva": "https://playtomic.com/clubs/nexo-padel-club",
+      "url_site": null,
+      "pagamento": [
+        "online"
+      ],
+      "pagamento_confirmado": false,
+      "preco": null,
+      "duracao_slot": 90,
+      "horario": [
+        [
+          "07:00",
+          "23:00"
+        ],
+        [
+          "07:00",
+          "23:00"
+        ],
+        [
+          "07:00",
+          "23:00"
+        ],
+        [
+          "07:00",
+          "23:00"
+        ],
+        [
+          "07:00",
+          "23:00"
+        ],
+        [
+          "07:00",
+          "23:00"
+        ],
+        [
+          "07:00",
+          "23:00"
+        ]
+      ],
+      "horario_confirmado": true,
+      "nota_clube": "Campos descobertos com vista panorâmica. Estacionamento gratuito, restaurante e balneários.",
+      "disponibilidade": {}
+    },
+    {
+      "id": "lobos-park",
+      "nome": "Lobos Park",
+      "concelho": "Câmara de Lobos",
+      "morada": "Lobos Park, Câmara de Lobos",
+      "coords": [
+        32.6506,
+        -16.9776
+      ],
+      "campos": null,
+      "cobertos": null,
+      "telefone": null,
+      "email": null,
+      "plataforma": "SIMplifica (Câmara Municipal)",
+      "url_reserva": "https://simplifica.madeira.gov.pt/services/3-53-297",
+      "url_site": "https://www.cm-camaradelobos.pt/servicos/desporto/lobos-park/campos-de-padel-lobos-park",
+      "pagamento": [
+        "online"
+      ],
+      "pagamento_confirmado": false,
+      "preco": null,
+      "duracao_slot": 60,
+      "horario": null,
+      "horario_confirmado": false,
+      "nota_clube": "Campos municipais. Reserva pelo portal SIMplifica, com registo prévio. Número de campos, horário e preço não publicados online.",
       "disponibilidade": {}
     }
   ]

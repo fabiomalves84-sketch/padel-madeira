@@ -29,12 +29,35 @@ o cookie de autenticação é HttpOnly, ou seja, não é acessível a partir da
 página. Os dados que lá estão foram recolhidos com uma sessão aberta num
 browser e ficam estáticos até serem recolhidos outra vez da mesma forma.
 
+## Clubes
+
+| Clube | Concelho | Campos | Plataforma | Tempo real |
+|---|---|---|---|---|
+| Quinta do Padel | Funchal | 5 cobertos | MatchPoint | Sim, com sessão |
+| Play Padel Madeira | Funchal | 3 | MatchPoint | Sim, público |
+| Centro de Padel e Lazer | Funchal | 3 cobertos | Aircourts | Não |
+| Jardins Panorâmicos do Lido | Funchal | 3 | Field (extinta) | Não |
+| Quinta Magnólia | Funchal | 3 | SIMplifica | Não |
+| Padel Centro Caniço | Santa Cruz | 2 | Aircourts | Não |
+| Nexo Padel Club | Câmara de Lobos | 2 | Playtomic | Não |
+| Lobos Park | Câmara de Lobos | ? | SIMplifica | Não |
+| Centro Desportivo da Madeira | Ribeira Brava | 2 | Aircourts | Não |
+| Padel Porto de Recreio da Calheta | Calheta | 2 | Aircourts | Não |
+| Padel Vila Baleira | Porto Santo | 4 | Aircourts | Não |
+| Complexo de Ténis e Padel do Porto Santo | Porto Santo | 2 | Aircourts | Não |
+
+**12 espaços, 31 campos.** Preços por hora e campo inteiro, dos que publicam:
+Porto Santo Ténis 5€, Ribeira Brava 6€, Calheta 6€, Caniço 8€, Centro de Padel
+e Lazer 12€, Vila Baleira 12€.
+
 ## Disponibilidade real: o que dá e o que não dá
 
 | Clube | Plataforma | Disponibilidade |
 |---|---|---|
 | Play Padel Madeira | MatchPoint | **Sim**, grelha pública |
 | Quinta do Padel | MatchPoint | **Sim, com sessão iniciada** |
+| Nexo Padel Club | Playtomic | Não, o site não mostra grelha |
+| Lobos Park | SIMplifica | Não, exige registo |
 | Centro de Padel e Lazer | Aircourts | Não, slots só com sessão |
 | Padel Centro Caniço | Aircourts | Não, slots só com sessão |
 | Jardins Panorâmicos | Field | Plataforma aparentemente encerrada |
