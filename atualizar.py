@@ -1,157 +1,79 @@
 #!/usr/bin/env python3
 """
-Atualiza a disponibilidade real dos campos e regenera dados.js.
+Atualiza a disponibilidade real e regenera o dados.js que a app lê.
 
-    python3 atualizar.py              # atualiza os proximos 7 dias
-    python3 atualizar.py --descobrir  # despeja a resposta crua de cada plataforma
+    python3 atualizar.py        # próximos 7 dias
 
-AVISO HONESTO: os adaptadores abaixo foram escritos contra o formato conhecido
-das APIs internas do Playtomic e do Aircourts, mas NAO foram testados contra os
-servidores reais. Corre com --descobrir primeiro, ve o que volta em bruto,
-e ajusta o parser. Estas APIs nao sao publicas e podem mudar sem aviso.
+Estado das plataformas, a 10 de setembro de 2026:
+
+  Play Padel Madeira      MatchPoint   grelha pública, funciona
+  Quinta do Padel         MatchPoint   exige login, sem acesso
+  Centro de Padel e Lazer Aircourts    slots só com sessão, sem acesso
+  Padel Centro Caniço     Aircourts    slots só com sessão, sem acesso
+  Jardins Panorâmicos     Field        plataforma aparentemente encerrada
+  Quinta Magnólia         SIMplifica   exige registo no portal do Governo
+
+Os clubes sem acesso ficam com o horário de funcionamento, e a app diz
+claramente que não sabe se estão livres.
 """
 
-import json, sys, datetime, pathlib, urllib.request, urllib.parse, urllib.error
+import json
+import datetime
+import pathlib
+import sys
 
 AQUI = pathlib.Path(__file__).parent
 DIAS = 7
-UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/128 Safari/537.36"
 
-
-def http(url, dados=None, cabecalhos=None, metodo=None):
-    h = {"User-Agent": UA, "Accept": "application/json, text/plain, */*"}
-    h.update(cabecalhos or {})
-    corpo = None
-    if dados is not None:
-        corpo = urllib.parse.urlencode(dados).encode()
-        h.setdefault("Content-Type", "application/x-www-form-urlencoded")
-    req = urllib.request.Request(url, data=corpo, headers=h, method=metodo)
-    try:
-        with urllib.request.urlopen(req, timeout=25) as r:
-            return r.read().decode("utf-8", "replace")
-    except urllib.error.HTTPError as e:
-        corpo_erro = e.read().decode("utf-8", "replace")
-        raise urllib.error.HTTPError(
-            e.url, e.code, f"{e.reason} -- corpo: {corpo_erro[:2000]}", e.headers, None
-        ) from None
-
-
-# --------------------------------------------------------------- adaptadores
-
-def playtomic(clube, data):
-    """Devolve lista de horas livres 'HH:MM' ou None se falhar."""
-    tid = clube.get("playtomic_tenant_id")
-    if not tid:
-        return None
-    q = urllib.parse.urlencode({
-        "sport_id": "PADEL",
-        "tenant_id": tid,
-        "local_start_min": f"{data}T00:00:00",
-        "local_start_max": f"{data}T23:59:59",
-    })
-    bruto = http(f"https://api.playtomic.io/v1/availability?{q}")
-    horas = set()
-    for campo in json.loads(bruto):
-        for s in campo.get("slots", []):
-            horas.add(s["start_time"][:5])
-    return sorted(horas)
-
-
-AIRCOURTS_CLUB_IDS = {
-    # o slug nao e aceite pela API; o endpoint exige o id numerico interno do
-    # clube, descoberto varrendo o endpoint de busca por zona (--descobrir).
-    "centro-de-padel-e-lazer": "353",  # Centro de Padel e Lazer, Funchal
-    "padel-centro-canico": "486",      # Padel Centro Canico
-}
-
-
-def aircourts(clube, data):
-    """Devolve lista de horas livres 'HH:MM' ou None se falhar."""
-    slug = clube.get("aircourts_slug")
-    club_id = AIRCOURTS_CLUB_IDS.get(slug)
-    if not club_id:
-        return None
-    q = urllib.parse.urlencode({"date": data, "sport": "4", "start_time": "00:00"})
-    bruto = http(f"https://www.aircourts.com/index.php/api/search_with_club/{club_id}?{q}")
-    j = json.loads(bruto)
-    horas = set()
-    for res in j.get("results", []):
-        for s in res.get("slots", []):
-            horas.add(str(s.get("start", ""))[:5])
-    horas.discard("")
-    return sorted(horas)
-
-
-ADAPTADORES = {"playtomic": playtomic, "aircourts": aircourts}
-
-
-# --------------------------------------------------------------------- fluxo
-
-def descobrir(d):
-    saida = AQUI / "bruto"
-    saida.mkdir(exist_ok=True)
-    hoje = datetime.date.today().isoformat()
-    for c in d["clubes"]:
-        for nome in ADAPTADORES:
-            chave = f"{nome}_tenant_id" if nome == "playtomic" else f"{nome}_slug"
-            if not c.get(chave):
-                continue
-            try:
-                r = ADAPTADORES[nome](c, hoje)
-                print(f"  OK   {c['id']:24} {nome:10} -> {r}")
-            except Exception as e:
-                print(f"  FALHA {c['id']:24} {nome:10} -> {type(e).__name__}: {e}")
-        if c.get("url_reserva"):
-            try:
-                html = http(c["url_reserva"])
-                f = saida / f"{c['id']}.html"
-                f.write_text(html)
-                print(f"       pagina guardada em bruto/{f.name} ({len(html)} bytes)")
-            except Exception as e:
-                print(f"       pagina falhou: {type(e).__name__}: {e}")
-
-
-def atualizar(d):
-    hoje = datetime.date.today()
-    for c in d["clubes"]:
-        adaptador = None
-        if c.get("playtomic_tenant_id"):
-            adaptador = playtomic
-        elif c.get("aircourts_slug"):
-            adaptador = aircourts
-        if not adaptador:
-            continue
-        disp = {}
-        for i in range(DIAS):
-            data = (hoje + datetime.timedelta(days=i)).isoformat()
-            try:
-                horas = adaptador(c, data)
-                if horas is not None:
-                    disp[data] = horas
-            except Exception as e:
-                print(f"  {c['id']} {data}: {type(e).__name__}: {e}", file=sys.stderr)
-        if disp:
-            c["disponibilidade"] = disp
-            print(f"  {c['id']}: {sum(len(v) for v in disp.values())} slots em {len(disp)} dias")
-        else:
-            print(f"  {c['id']}: sem dados, mantem horario base")
-    d["atualizado"] = datetime.datetime.now().astimezone().isoformat()
+LEITORES = {}
+try:
+    import matchpoint
+    LEITORES["play-padel-madeira"] = matchpoint.grelha
+except ImportError:
+    print("aviso: matchpoint.py não encontrado, sem disponibilidade real",
+          file=sys.stderr)
 
 
 def main():
     d = json.loads((AQUI / "dados.json").read_text())
-    if "--descobrir" in sys.argv:
-        print("Modo descoberta. Nada e gravado em dados.js.\n")
-        descobrir(d)
-        return
-    print("A atualizar disponibilidade...\n")
-    atualizar(d)
+    hoje = datetime.date.today()
+    total = 0
+
+    for clube in d["clubes"]:
+        leitor = LEITORES.get(clube["id"])
+        if not leitor:
+            clube["disponibilidade"] = {}
+            continue
+
+        disp = {}
+        for i in range(DIAS):
+            data = hoje + datetime.timedelta(days=i)
+            try:
+                g = leitor(data)
+                disp[data.isoformat()] = {
+                    "abertura": g["abertura"],
+                    "fecho": g["fecho"],
+                    "passo": g["passo_min"],
+                    "campos": [
+                        {"nome": c["nome"], "ocupado": [list(o) for o in c["ocupado"]]}
+                        for c in g["campos"]
+                    ],
+                }
+                total += 1
+            except Exception as e:
+                print(f"  {clube['id']} {data}: {type(e).__name__}: {e}",
+                      file=sys.stderr)
+        clube["disponibilidade"] = disp
+        print(f"  {clube['id']}: {len(disp)} dias com disponibilidade real")
+
+    d["atualizado"] = datetime.datetime.now().astimezone().isoformat()
+
     (AQUI / "dados.json").write_text(json.dumps(d, ensure_ascii=False, indent=2))
     (AQUI / "dados.js").write_text(
         "// Gerado por atualizar.py. Nao editar a mao.\nwindow.DADOS = "
         + json.dumps(d, ensure_ascii=False, indent=2) + ";\n"
     )
-    print("\ndados.js atualizado.")
+    print(f"\ndados.js atualizado ({total} dias de disponibilidade real).")
 
 
 if __name__ == "__main__":

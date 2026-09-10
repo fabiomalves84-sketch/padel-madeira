@@ -12,102 +12,110 @@
 <link rel="apple-touch-icon" href="icone.png">
 <style>
 :root{
-  --bg:#f6f7f5; --card:#ffffff; --ink:#14211c; --muted:#6b7a73;
-  --line:#e2e7e3; --accent:#0f6b4a; --accent-soft:#e6f2ec;
-  --livre:#0f6b4a; --ocupado:#c8cfca; --desconhecido:#eef1ef;
-  --radius:14px;
+  --bg:#f5f7f5; --card:#fff; --ink:#14211c; --muted:#6b7a73; --line:#e2e7e3;
+  --accent:#0f6b4a; --accent-soft:#e6f2ec;
+  --livre:#0f6b4a; --livre-ink:#fff;
+  --ocupado:#e9ecea; --ocupado-ink:#a8b3ad;
+  --incerto:#eef1ef;
 }
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme:dark){
   :root{
-    --bg:#0f1512; --card:#182120; --ink:#e8efea; --muted:#93a29a;
-    --line:#26312d; --accent:#3fb787; --accent-soft:#16302561;
-    --livre:#3fb787; --ocupado:#333d38; --desconhecido:#212b28;
+    --bg:#0e1412; --card:#171f1d; --ink:#e8efea; --muted:#8fa098; --line:#252f2b;
+    --accent:#3fb787; --accent-soft:#16302561;
+    --livre:#2f9d72; --livre-ink:#fff;
+    --ocupado:#222b28; --ocupado-ink:#5d6b65;
+    --incerto:#1e2724;
   }
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  background:var(--bg); color:var(--ink);
+  background:var(--bg);color:var(--ink);
   font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   -webkit-font-smoothing:antialiased;
-  padding-bottom:env(safe-area-inset-bottom);
+  padding-bottom:calc(30px + env(safe-area-inset-bottom));
 }
-.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.wrap{max-width:680px;margin:0 auto;padding:0 14px}
 
-header{
-  position:sticky;top:0;z-index:20;background:var(--bg);
-  padding-top:env(safe-area-inset-top);
-  border-bottom:1px solid var(--line);
-}
-.hrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 0 10px}
-h1{font-size:19px;margin:0;letter-spacing:-.02em}
-.stamp{font-size:11px;color:var(--muted);white-space:nowrap}
+header{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.hrow{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  padding:calc(12px + env(safe-area-inset-top)) 0 8px}
+h1{font-size:18px;margin:0;letter-spacing:-.02em;flex:0 0 auto}
+.stamp{font-size:11px;color:var(--muted);white-space:nowrap;flex:0 1 auto;overflow:hidden;text-overflow:ellipsis}
 
-.scroller{display:flex;gap:8px;overflow-x:auto;padding:0 0 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.scroller{display:flex;gap:7px;overflow-x:auto;padding-bottom:9px;scrollbar-width:none}
 .scroller::-webkit-scrollbar{display:none}
-
-.day{
-  flex:0 0 auto;min-width:52px;text-align:center;padding:7px 10px;
-  border:1px solid var(--line);border-radius:12px;background:var(--card);
-  cursor:pointer;line-height:1.2;
-}
-.day b{display:block;font-size:16px;font-weight:600}
+.day{flex:0 0 auto;min-width:50px;text-align:center;padding:6px 9px;border:1px solid var(--line);
+  border-radius:11px;background:var(--card);cursor:pointer;line-height:1.2;color:inherit}
+.day b{display:block;font-size:15px;font-weight:600}
 .day span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .day[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.day[aria-selected="true"] span{color:#ffffffb8}
+.day[aria-selected="true"] span{color:#ffffffbb}
 
-.chips{display:flex;gap:7px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:11px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
-.chip{
-  flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid var(--line);
-  background:var(--card);font-size:13px;color:var(--muted);cursor:pointer;
-}
-.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.chip{flex:0 0 auto;padding:5px 11px;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);font-size:12.5px;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);
+  color:var(--accent);font-weight:600}
 
-main{padding:16px 0 40px}
-
-.club{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:14px}
+main{padding:14px 0 30px}
+.club{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:13px;margin-bottom:13px}
 .club h2{font-size:16px;margin:0 0 2px;letter-spacing:-.01em}
-.sub{font-size:12px;color:var(--muted);margin-bottom:9px}
-.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px}
-.badge{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--desconhecido);color:var(--muted)}
+.sub{font-size:12px;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 4px}
+.badge{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--incerto);color:var(--muted)}
 .badge.pay{background:var(--accent-soft);color:var(--accent)}
-.badge.warn{background:#f5e6c8;color:#7a5a12}
-@media (prefers-color-scheme: dark){.badge.warn{background:#3a2f14;color:#e0bd6a}}
+.badge.live{background:var(--livre);color:var(--livre-ink);font-weight:600}
 
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(66px,1fr));gap:6px}
-.slot{
-  padding:9px 4px;border-radius:9px;border:1px solid transparent;
-  background:var(--desconhecido);color:var(--ink);font-size:13px;font-weight:500;
-  text-align:center;cursor:pointer;font-variant-numeric:tabular-nums;
+/* grelha */
+.gridwrap{overflow-x:auto;margin-top:10px;-webkit-overflow-scrolling:touch}
+table.grelha{border-collapse:separate;border-spacing:0 3px;width:100%;min-width:100%}
+table.grelha th{font-size:11px;font-weight:600;color:var(--muted);padding:0 4px 5px;
+  text-align:center;white-space:nowrap}
+table.grelha th.hcol{width:46px}
+td.hora{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;
+  text-align:right;padding-right:7px;white-space:nowrap;width:46px}
+td.cel{padding:0 2px}
+.cel button{
+  width:100%;min-width:62px;height:26px;border:0;border-radius:6px;cursor:pointer;
+  font-size:11px;font-weight:600;color:var(--livre-ink);background:var(--livre);
   -webkit-tap-highlight-color:transparent;
 }
-.slot.livre{background:var(--livre);color:#fff}
-.slot.ocupado{background:var(--ocupado);color:var(--muted);cursor:not-allowed;text-decoration:line-through}
-.slot.passado{opacity:.3;cursor:not-allowed}
-.slot:active:not(.ocupado):not(.passado){transform:scale(.96)}
-.fechado{font-size:13px;color:var(--muted);padding:8px 0}
+.cel button[disabled]{background:var(--ocupado);color:var(--ocupado-ink);cursor:not-allowed;font-weight:400}
+.cel button.incerto{background:var(--incerto);color:var(--muted);font-weight:400}
+.cel button.passado{opacity:.32;cursor:not-allowed}
+.cel button:active:not([disabled]){transform:scale(.97)}
 
-.sheet-bg{position:fixed;inset:0;background:#0009;z-index:40;display:none}
-.sheet-bg.on{display:block}
-.sheet{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--card);
+.horas{font-size:19px;margin:12px 0 2px;font-variant-numeric:tabular-nums}
+.horas b{color:var(--accent)}
+.aviso{font-size:12.5px;color:var(--muted);margin-top:9px;line-height:1.5}
+.abrir{display:block;margin-top:10px;padding:11px;border-radius:10px;background:var(--accent-soft);
+  color:var(--accent);font-size:13.5px;font-weight:600;text-align:center;text-decoration:none}
+.fechado{font-size:13px;color:var(--muted);padding:10px 0}
+
+/* folha */
+.bg{position:fixed;inset:0;background:#0009;z-index:40;display:none}
+.bg.on{display:block}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--card);
   border-radius:18px 18px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));
-  transform:translateY(100%);transition:transform .22s ease;max-width:640px;margin:0 auto;
-}
+  transform:translateY(100%);transition:transform .22s ease;max-width:680px;margin:0 auto}
 .sheet.on{transform:translateY(0)}
 .sheet h3{margin:0 0 3px;font-size:17px}
-.sheet .when{font-size:22px;font-weight:600;color:var(--accent);margin:6px 0 12px;font-variant-numeric:tabular-nums}
+.when{font-size:21px;font-weight:600;color:var(--accent);margin:7px 0 12px;font-variant-numeric:tabular-nums}
 .kv{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-top:1px solid var(--line);font-size:13px}
-.kv span:first-child{color:var(--muted)}
+.kv span:first-child{color:var(--muted);flex:0 0 auto}
 .kv span:last-child{text-align:right}
-.go{
-  display:block;width:100%;margin-top:16px;padding:14px;border:0;border-radius:12px;
-  background:var(--accent);color:#fff;font-size:15px;font-weight:600;text-align:center;
-  text-decoration:none;cursor:pointer;
-}
-.close{position:absolute;top:14px;right:16px;border:0;background:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
-.disc{font-size:11px;color:var(--muted);text-align:center;padding:0 8px 30px;line-height:1.5}
+.go{display:block;width:100%;margin-top:15px;padding:14px;border:0;border-radius:12px;
+  background:var(--accent);color:#fff;font-size:15px;font-weight:600;text-align:center;text-decoration:none}
+.close{position:absolute;top:13px;right:15px;border:0;background:none;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1}
+.legenda{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  font-size:11px;color:var(--muted);padding:4px 0 14px}
+.legenda i{display:inline-block;width:11px;height:11px;border-radius:3px;
+  vertical-align:-1px;margin-right:4px}
+.disc{font-size:11px;color:var(--muted);text-align:center;padding:0 6px 26px;line-height:1.55}
 .empty{text-align:center;color:var(--muted);padding:40px 20px;font-size:14px}
 </style>
 </head>
@@ -115,19 +123,22 @@ main{padding:16px 0 40px}
 
 <header>
   <div class="wrap">
-    <div class="hrow">
-      <h1>Padel Madeira</h1>
-      <div class="stamp" id="stamp"></div>
-    </div>
+    <div class="hrow"><h1>Padel Madeira</h1><div class="stamp" id="stamp"></div></div>
     <div class="scroller" id="dias"></div>
     <div class="chips" id="filtros"></div>
   </div>
 </header>
 
 <main class="wrap" id="lista"></main>
+
+<div class="legenda wrap">
+  <span><i style="background:var(--livre)"></i>livre</span>
+  <span><i style="background:var(--ocupado)"></i>ocupado</span>
+  <span><i style="background:var(--incerto);border:1px solid var(--line)"></i>por confirmar</span>
+</div>
 <p class="disc wrap" id="disc"></p>
 
-<div class="sheet-bg" id="bg"></div>
+<div class="bg" id="bg"></div>
 <div class="sheet" id="sheet">
   <button class="close" id="fechar" aria-label="Fechar">&times;</button>
   <h3 id="s-nome"></h3>
@@ -142,153 +153,169 @@ main{padding:16px 0 40px}
 (function(){
   const D = window.DADOS || {clubes:[]};
   const DIAS = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
-  const PAG = {online:'Online', mbway:'MB Way', balcao:'Ao balcão'};
   const MESES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+  const PAG = {online:'Online', mbway:'MB Way', balcao:'Ao balcão'};
 
   const hoje = new Date(); hoje.setHours(0,0,0,0);
-  let diaSel = 0;
-  let concelho = 'Todos';
-  let periodo = 'Todos';
-  let soCobertos = false;
+  let diaSel = 0, concelho = 'Todos', duracao = 90, soLivres = false;
 
   const iso = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-  const min = h => { const [a,b]=h.split(':').map(Number); return a*60+b; };
-  const hhmm = m => String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+  const min = h => { const p = h.split(':'); return (+p[0])*60 + (+p[1]); };
+  const hhmm = m => String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+  const dataDe = o => { const d = new Date(hoje); d.setDate(d.getDate()+o); return d; };
 
-  function dataDe(off){ const d=new Date(hoje); d.setDate(d.getDate()+off); return d; }
-
-  function slotsDe(clube, data){
-    if(!clube.horario) return null;
-    const h = clube.horario[data.getDay()];
-    if(!h) return [];
-    const ini = min(h[0]);
-    const fim = h[1]==='24:00' ? 1440 : min(h[1]);
-    const passo = clube.duracao_slot || 90;
-    const out = [];
-    for(let m=ini; m+passo<=fim; m+=passo) out.push(m);
-    return out;
-  }
-
-  function periodoOk(m){
-    if(periodo==='Todos') return true;
-    if(periodo==='Manhã') return m < 12*60;
-    if(periodo==='Tarde') return m >= 12*60 && m < 18*60;
-    return m >= 18*60;
-  }
-
-  // ---------- barra de dias ----------
+  // ---------- dias ----------
   const elDias = document.getElementById('dias');
   for(let i=0;i<7;i++){
     const d = dataDe(i);
     const b = document.createElement('button');
-    b.className='day'; b.type='button';
-    b.setAttribute('aria-selected', i===0);
+    b.className='day'; b.type='button'; b.setAttribute('aria-selected', i===0);
     b.innerHTML = '<span>'+(i===0?'hoje':DIAS[d.getDay()])+'</span><b>'+d.getDate()+'</b>';
     b.onclick = () => { diaSel=i; [...elDias.children].forEach((c,j)=>c.setAttribute('aria-selected',j===i)); render(); };
     elDias.appendChild(b);
   }
 
   // ---------- filtros ----------
-  const concelhos = ['Todos', ...new Set(D.clubes.map(c=>c.concelho))];
   const elF = document.getElementById('filtros');
-  function chip(txt, activo, onclick){
+  const concelhos = ['Todos', ...new Set(D.clubes.map(c=>c.concelho))];
+  function chip(txt, activo, fn){
     const b=document.createElement('button');
     b.className='chip'; b.type='button'; b.textContent=txt;
-    b.setAttribute('aria-pressed', activo);
-    b.onclick=onclick; elF.appendChild(b); return b;
+    b.setAttribute('aria-pressed', activo); b.onclick=fn; elF.appendChild(b);
   }
   function pintaFiltros(){
     elF.innerHTML='';
     concelhos.forEach(c => chip(c, concelho===c, ()=>{concelho=c;pintaFiltros();render();}));
-    ['Manhã','Tarde','Noite'].forEach(p => chip(p, periodo===p, ()=>{periodo = periodo===p?'Todos':p;pintaFiltros();render();}));
-    chip('Cobertos', soCobertos, ()=>{soCobertos=!soCobertos;pintaFiltros();render();});
+    chip('1h', duracao===60, ()=>{duracao=60;pintaFiltros();render();});
+    chip('1h30', duracao===90, ()=>{duracao=90;pintaFiltros();render();});
+    chip('Só livres', soLivres, ()=>{soLivres=!soLivres;pintaFiltros();render();});
   }
   pintaFiltros();
 
-  // ---------- sheet ----------
+  // ---------- folha ----------
   const bg=document.getElementById('bg'), sheet=document.getElementById('sheet');
-  function fechar(){ sheet.classList.remove('on'); bg.classList.remove('on'); }
+  const fechar = () => { sheet.classList.remove('on'); bg.classList.remove('on'); };
   bg.onclick=fechar; document.getElementById('fechar').onclick=fechar;
 
-  function abrir(clube, data, m, estado){
+  function abrir(clube, data, m, campo, estado){
     document.getElementById('s-nome').textContent = clube.nome;
     document.getElementById('s-morada').textContent = clube.morada || '';
-    const passo = clube.duracao_slot||90;
     document.getElementById('s-hora').textContent =
-      DIAS[data.getDay()]+' '+data.getDate()+' '+MESES[data.getMonth()]+'  ·  '+hhmm(m)+' – '+hhmm(m+passo);
+      DIAS[data.getDay()]+' '+data.getDate()+' '+MESES[data.getMonth()]+
+      (m!=null ? '  ·  '+hhmm(m)+' – '+hhmm(m+duracao) : '');
 
     const kv=[];
-    kv.push(['Estado', estado==='livre'?'Livre':(estado==='ocupado'?'Ocupado':'Por confirmar no clube')]);
+    if(campo) kv.push(['Campo', campo]);
+    kv.push(['Estado', estado==='livre' ? 'Livre agora'
+      : estado==='ocupado' ? 'Ocupado' : 'Não publicado, confirma no clube']);
     kv.push(['Campos', clube.campos + (clube.cobertos ? ' ('+clube.cobertos+' cobertos)' : '')]);
-    if(clube.preco) kv.push(['Preço', (clube.preco.min===clube.preco.max ? clube.preco.min+'€' : clube.preco.min+'–'+clube.preco.max+'€') + ' / ' + clube.preco.unidade + (clube.preco.confirmado?'':' (aprox.)')]);
-    const pag = (clube.pagamento||[]).map(p=>PAG[p]||p).join(', ');
-    kv.push(['Pagamento', pag + (clube.pagamento_confirmado?'':' (por confirmar)')]);
+    if(clube.preco) kv.push(['Preço', clube.preco.min+'€ / '+clube.preco.unidade +
+      (clube.preco.confirmado ? '' : ' (aprox.)')]);
+    kv.push(['Pagamento', (clube.pagamento||[]).map(p=>PAG[p]||p).join(', ') +
+      (clube.pagamento_confirmado ? '' : ' (por confirmar)')]);
     kv.push(['Plataforma', clube.plataforma]);
     if(clube.telefone) kv.push(['Telefone', clube.telefone]);
     if(clube.nota_clube) kv.push(['Nota', clube.nota_clube]);
-    document.getElementById('s-kv').innerHTML = kv.map(([k,v])=>
+    document.getElementById('s-kv').innerHTML = kv.map(([k,v]) =>
       '<div class="kv"><span>'+k+'</span><span>'+v+'</span></div>').join('');
 
     const go=document.getElementById('s-go');
     go.href = clube.url_reserva;
     const plat = clube.plataforma.split(' /')[0].split(' (')[0];
-    go.textContent = /App pr/.test(plat) ? 'Abrir reservas do clube →' : 'Reservar em ' + plat + ' →';
+    go.textContent = /App pr/.test(plat) ? 'Abrir reservas do clube →' : 'Reservar em '+plat+' →';
     sheet.classList.add('on'); bg.classList.add('on');
+  }
+
+  // ---------- grelha com disponibilidade real ----------
+  function grelhaReal(clube, g, data, agoraMin, eHoje){
+    const ini = min(g.abertura), fim = min(g.fecho), passo = g.passo || 30;
+    const ocupados = g.campos.map(c => c.ocupado.map(o => [min(o[0]), min(o[1])]));
+
+    let linhas = [];
+    for(let t=ini; t+duracao<=fim; t+=passo){
+      if(eHoje && t <= agoraMin) continue;          // o passado não interessa
+      const estados = ocupados.map(blocos =>
+        blocos.some(([a,b]) => t < b && t+duracao > a) ? 'ocupado' : 'livre');
+      if(soLivres && !estados.includes('livre')) continue;
+      linhas.push([t, estados]);
+    }
+    if(!linhas.length) return '<div class="fechado">'+
+      (eHoje ? 'Já não há horários hoje.' : 'Sem horários livres neste dia.')+'</div>';
+
+    let h = '<div class="gridwrap"><table class="grelha"><thead><tr><th class="hcol"></th>';
+    g.campos.forEach(c => h += '<th>'+c.nome+'</th>');
+    h += '</tr></thead><tbody>';
+    linhas.forEach(([t, estados]) => {
+      h += '<tr><td class="hora">'+hhmm(t)+'</td>';
+      estados.forEach((e,i) => {
+        h += '<td class="cel"><button data-t="'+t+'" data-c="'+i+'" data-e="'+e+'"'+
+             (e==='ocupado' ? ' disabled' : '')+'>'+(e==='livre'?'livre':'')+'</button></td>';
+      });
+      h += '</tr>';
+    });
+    return h + '</tbody></table></div>';
+  }
+
+  // ---------- resumo para clubes sem disponibilidade publicada ----------
+  function resumoHorario(clube, data){
+    if(!clube.horario)
+      return '<div class="aviso">'+(clube.nota_clube || 'Horário não publicado.')+'</div>';
+    const hr = clube.horario[data.getDay()];
+    if(!hr) return '<div class="fechado">Fechado neste dia.</div>';
+    const fecho = hr[1]==='24:00' ? '00:00' : hr[1];
+    const fimMin = hr[1]==='24:00' ? 1440 : min(hr[1]);
+    const agoraM = new Date().getHours()*60 + new Date().getMinutes();
+    if(diaSel===0 && agoraM >= fimMin)
+      return '<div class="fechado">Já fechou por hoje (encerra às '+fecho+').</div>';
+    return '<div class="horas">Aberto das <b>'+hr[0]+'</b> às <b>'+fecho+'</b></div>'+
+           '<div class="aviso">Este clube não publica disponibilidade. '+
+           'Tens de confirmar se há campo livre na plataforma dele.</div>';
   }
 
   // ---------- render ----------
   function render(){
-    const data = dataDe(diaSel);
-    const chave = iso(data);
-    const agora = new Date();
-    const eHoje = diaSel===0;
-    const minAgora = agora.getHours()*60 + agora.getMinutes();
+    const data = dataDe(diaSel), chave = iso(data);
+    const agora = new Date(), eHoje = diaSel===0;
+    const agoraMin = agora.getHours()*60 + agora.getMinutes();
     const lista = document.getElementById('lista');
     lista.innerHTML='';
 
-    const clubes = D.clubes.filter(c =>
-      (concelho==='Todos' || c.concelho===concelho) &&
-      (!soCobertos || (c.cobertos && c.cobertos>0))
-    );
-
+    const clubes = D.clubes
+      .filter(c => concelho==='Todos' || c.concelho===concelho)
+      .slice().sort((a,b) => {
+        const ta = a.disponibilidade && a.disponibilidade[chave] ? 0 : 1;
+        const tb = b.disponibilidade && b.disponibilidade[chave] ? 0 : 1;
+        return ta - tb;
+      });
     if(!clubes.length){ lista.innerHTML='<p class="empty">Nenhum clube com estes filtros.</p>'; return; }
 
     clubes.forEach(c => {
-      const card=document.createElement('section'); card.className='club';
-      let html = '<h2>'+c.nome+'</h2><div class="sub">'+c.concelho+' · '+c.campos+' campos · '+c.plataforma+'</div>';
+      const g = c.disponibilidade && c.disponibilidade[chave];
+      const card = document.createElement('section'); card.className='club';
 
-      html += '<div class="badges">';
-      (c.pagamento||[]).forEach(p => html += '<span class="badge pay">'+(PAG[p]||p)+'</span>');
-      if(c.preco) html += '<span class="badge">'+(c.preco.min===c.preco.max?c.preco.min+'€':c.preco.min+'–'+c.preco.max+'€')+' / '+c.preco.unidade+'</span>';
-      if(!c.horario_confirmado) html += '<span class="badge warn">horário por confirmar</span>';
-      html += '</div>';
+      let h = '<h2>'+c.nome+'</h2><div class="sub">'+c.concelho+' · '+c.campos+' campos · '+c.plataforma+'</div>';
+      h += '<div class="badges">';
+      if(g) h += '<span class="badge live">disponibilidade real</span>';
+      (c.pagamento||[]).forEach(p => h += '<span class="badge pay">'+(PAG[p]||p)+'</span>');
+      if(c.preco) h += '<span class="badge">'+c.preco.min+'€ / '+c.preco.unidade+'</span>';
+      h += '</div>';
 
-      const slots = slotsDe(c, data);
-      if(slots===null){
-        html += '<div class="fechado">'+(c.nota_clube || 'Horário não publicado. Consulta a plataforma.')+'</div>';
-        html += '<div class="slots"><button class="slot" data-m="-1">Ver</button></div>';
-      } else if(!slots.length){
-        html += '<div class="fechado">Fechado neste dia.</div>';
+      if(g){
+        h += grelhaReal(c, g, data, agoraMin, eHoje);
       } else {
-        const visiveis = slots.filter(periodoOk);
-        if(!visiveis.length){
-          html += '<div class="fechado">Sem horários neste período.</div>';
-        } else {
-          html += '<div class="slots">';
-          visiveis.forEach(m => {
-            const disp = (c.disponibilidade && c.disponibilidade[chave]) || null;
-            let estado = 'desconhecido';
-            if(disp){ estado = disp.includes(hhmm(m)) ? 'livre' : 'ocupado'; }
-            const passado = eHoje && m <= minAgora;
-            const cls = 'slot ' + (passado ? 'passado' : estado);
-            html += '<button class="'+cls+'" data-m="'+m+'" data-e="'+estado+'"'+(passado||estado==='ocupado'?' disabled':'')+'>'+hhmm(m)+'</button>';
-          });
-          html += '</div>';
-        }
+        h += resumoHorario(c, data);
       }
-      card.innerHTML = html;
-      card.querySelectorAll('.slot').forEach(b => {
-        b.onclick = () => abrir(c, data, Number(b.dataset.m)<0 ? 0 : Number(b.dataset.m), b.dataset.e||'desconhecido');
+      const plat = c.plataforma.split(' /')[0].split(' (')[0];
+      const rot = /App pr/.test(plat) ? 'Abrir reservas do clube' : 'Abrir '+plat;
+      h += '<a class="abrir" href="'+c.url_reserva+'" target="_blank" rel="noopener">'+rot+' →</a>';
+
+      card.innerHTML = h;
+      card.querySelectorAll('button[data-t]').forEach(b => {
+        b.onclick = () => {
+          const idx = b.dataset.c;
+          const nomeCampo = (g && idx!=null) ? g.campos[+idx].nome : null;
+          abrir(c, data, +b.dataset.t, nomeCampo, b.dataset.e);
+        };
       });
       lista.appendChild(card);
     });
@@ -298,12 +325,16 @@ main{padding:16px 0 40px}
   const stamp = document.getElementById('stamp');
   if(D.atualizado){
     const t = new Date(D.atualizado);
-    stamp.textContent = 'atualizado ' + t.toLocaleString('pt-PT',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
-  } else {
-    stamp.textContent = 'horários base';
-  }
+    const mesmoDia = t.toDateString() === new Date().toDateString();
+    stamp.textContent = mesmoDia
+      ? 'atualizado às '+t.toLocaleTimeString('pt-PT',{hour:'2-digit',minute:'2-digit'})
+      : t.toLocaleDateString('pt-PT',{day:'2-digit',month:'2-digit'});
+  } else stamp.textContent = 'horários base';
+
   document.getElementById('disc').textContent =
-    'Os horários mostrados são os de funcionamento de cada clube, não a disponibilidade real. Toca num horário para abrir a plataforma de reserva do clube e confirmar. ' + (D.nota||'');
+    'Um dos seis clubes publica disponibilidade em tempo real. Nos restantes, a grelha '+
+    'mostra apenas o horário de funcionamento e é preciso confirmar na plataforma do clube. '+
+    'Corre atualizar.py para refrescar os dados.';
 
   render();
 })();

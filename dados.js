@@ -1,7 +1,7 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": null,
-  "nota": "Precos e horarios marcados como nao confirmados vêm de fontes secundarias. A maioria dos clubes da Madeira nao publica precos na web aberta: estao dentro das apps de reserva, atras de login.",
+  "atualizado": "2026-09-10T15:28:17.554351+01:00",
+  "nota": "Os dois clubes do Aircourts (Centro de Padel e Lazer, Padel Centro Caniço) têm dados de fonte primária. Os outros quatro ainda têm campos por confirmar.",
   "clubes": [
     {
       "id": "quinta-do-padel",
@@ -120,90 +120,659 @@ window.DADOS = {
         ]
       ],
       "horario_confirmado": true,
-      "disponibilidade": {}
+      "disponibilidade": {
+        "2026-09-10": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "13:00",
+                  "14:00"
+                ],
+                [
+                  "14:00",
+                  "15:00"
+                ],
+                [
+                  "15:30",
+                  "17:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "10:30",
+                  "12:00"
+                ],
+                [
+                  "14:00",
+                  "15:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "10:00"
+                ],
+                [
+                  "10:00",
+                  "11:00"
+                ],
+                [
+                  "14:00",
+                  "15:00"
+                ],
+                [
+                  "15:30",
+                  "16:30"
+                ],
+                [
+                  "17:00",
+                  "18:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-09-11": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "11:00",
+                  "12:00"
+                ],
+                [
+                  "16:00",
+                  "17:00"
+                ],
+                [
+                  "17:00",
+                  "18:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "09:00",
+                  "10:30"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "10:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-09-12": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "11:00"
+                ],
+                [
+                  "11:00",
+                  "12:30"
+                ],
+                [
+                  "14:00",
+                  "16:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "11:00"
+                ],
+                [
+                  "14:00",
+                  "16:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "14:00",
+                  "16:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-09-13": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "10:00",
+                  "11:30"
+                ],
+                [
+                  "14:00",
+                  "17:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "10:00",
+                  "11:30"
+                ],
+                [
+                  "14:00",
+                  "17:00"
+                ],
+                [
+                  "18:30",
+                  "20:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "10:00",
+                  "11:30"
+                ],
+                [
+                  "14:00",
+                  "17:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-09-14": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "10:00",
+                  "11:00"
+                ],
+                [
+                  "11:00",
+                  "12:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "09:00",
+                  "10:00"
+                ],
+                [
+                  "10:00",
+                  "11:00"
+                ],
+                [
+                  "11:00",
+                  "12:00"
+                ],
+                [
+                  "16:00",
+                  "17:00"
+                ],
+                [
+                  "17:00",
+                  "18:00"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-09-15": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "19:30",
+                  "21:00"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "10:00"
+                ],
+                [
+                  "10:00",
+                  "11:00"
+                ],
+                [
+                  "12:30",
+                  "13:30"
+                ],
+                [
+                  "17:00",
+                  "18:00"
+                ],
+                [
+                  "18:00",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-09-16": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "18:00",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "10:00"
+                ],
+                [
+                  "10:00",
+                  "11:00"
+                ],
+                [
+                  "11:00",
+                  "12:00"
+                ],
+                [
+                  "13:00",
+                  "14:00"
+                ],
+                [
+                  "17:30",
+                  "18:30"
+                ],
+                [
+                  "18:30",
+                  "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
+                ]
+              ]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "centro-padel-lazer",
       "nome": "Centro de Padel e Lazer",
       "concelho": "Funchal",
-      "morada": "Funchal (estacionamento gratuito)",
+      "morada": "R. das Hortas 101, 9050-024 Funchal",
       "coords": [
-        32.6669,
-        -16.9241
+        32.6535383,
+        -16.9059504
       ],
       "campos": 3,
       "cobertos": 3,
-      "telefone": null,
+      "telefone": "291647790",
       "email": null,
       "plataforma": "Playtomic / Aircourts",
       "url_reserva": "https://playtomic.io/centro-de-padel-e-lazer/bde4f48e-3176-42e5-aa1e-ee383be8d564",
       "url_site": "https://www.aircourts.com/index.php/site/view_club/centro-de-padel-e-lazer",
       "pagamento": [
-        "online"
+        "balcao"
       ],
-      "pagamento_confirmado": false,
+      "pagamento_confirmado": true,
       "preco": {
-        "min": 15,
-        "max": 30,
-        "unidade": "1h30",
-        "confirmado": false
+        "min": 12,
+        "max": 12,
+        "unidade": "hora (campo inteiro)",
+        "confirmado": true
       },
-      "duracao_slot": 90,
+      "duracao_slot": 60,
       "horario": [
-        null,
         [
-          "08:00",
-          "20:00"
+          "10:00",
+          "21:00"
         ],
         [
           "08:00",
-          "20:00"
+          "24:00"
         ],
         [
           "08:00",
-          "20:00"
+          "24:00"
         ],
         [
           "08:00",
-          "20:00"
+          "24:00"
         ],
         [
           "08:00",
-          "20:00"
+          "24:00"
         ],
         [
           "08:00",
-          "20:00"
+          "24:00"
+        ],
+        [
+          "09:00",
+          "24:00"
         ]
       ],
-      "horario_confirmado": false,
+      "horario_confirmado": true,
       "disponibilidade": {},
       "playtomic_tenant_id": "bde4f48e-3176-42e5-aa1e-ee383be8d564",
-      "aircourts_slug": "centro-de-padel-e-lazer"
+      "aircourts_slug": "centro-de-padel-e-lazer",
+      "aircourts_club_id": 353,
+      "aircourts_sport_id": 4,
+      "nota_clube": "Pagamento no campo, à chegada e sempre antes de jogar: dinheiro, cheque ou multibanco. Cancelamento com 48h de antecedência. Relvado sintético, LED, estacionamento gratuito. Reserva até 10 dias de antecedência."
     },
     {
       "id": "padel-centro-canico",
       "nome": "Padel Centro Caniço",
       "concelho": "Santa Cruz",
-      "morada": "Impasse Estrada do Livramento, Caniço",
+      "morada": "Impasse Est. do Livramento 7, 9125-184 Caniço",
       "coords": [
-        32.6499,
-        -16.846
+        32.6496333,
+        -16.8422449
       ],
-      "campos": 3,
-      "cobertos": null,
-      "telefone": "291934621",
+      "campos": 2,
+      "cobertos": 0,
+      "telefone": "291602431",
       "email": null,
       "plataforma": "TieSports / Aircourts",
       "url_reserva": "https://clubs.tiesports.com/en/madeira/PadelCentroCanico",
       "url_site": "https://www.aircourts.com/index.php/site/view_club//padel-centro-canico",
       "pagamento": [
-        "online",
-        "balcao"
+        "online"
       ],
-      "pagamento_confirmado": false,
-      "preco": null,
-      "duracao_slot": 90,
+      "pagamento_confirmado": true,
+      "preco": {
+        "min": 8,
+        "max": 8,
+        "unidade": "hora (campo inteiro)",
+        "confirmado": true
+      },
+      "duracao_slot": 60,
       "horario": [
         [
           "09:00",
@@ -236,7 +805,10 @@ window.DADOS = {
       ],
       "horario_confirmado": true,
       "disponibilidade": {},
-      "aircourts_slug": "padel-centro-canico"
+      "aircourts_slug": "padel-centro-canico",
+      "aircourts_club_id": 486,
+      "aircourts_sport_id": 4,
+      "nota_clube": "Pré-pagamento obrigatório por cartão de débito/crédito ou referência multibanco. Cancelamento até 6h antes devolve o valor em cartão de reembolso. Campos descobertos com iluminação, estacionamento privado gratuito. Reserva até 15 dias de antecedência."
     },
     {
       "id": "jardim-panoramico",
