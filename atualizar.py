@@ -2,7 +2,7 @@
 """
 Atualiza a disponibilidade real e regenera o dados.js que a app lê.
 
-    python3 atualizar.py        # próximos 7 dias
+    python3 atualizar.py        # próximos 15 dias
 
 Estado das plataformas, a 10 de setembro de 2026:
 
@@ -24,7 +24,7 @@ import pathlib
 import sys
 
 AQUI = pathlib.Path(__file__).parent
-DIAS = 7
+DIAS = 15
 
 LEITORES = {}
 try:
@@ -43,7 +43,9 @@ def main():
     for clube in d["clubes"]:
         leitor = LEITORES.get(clube["id"])
         if not leitor:
-            clube["disponibilidade"] = {}
+            # Sem leitor automatico: PRESERVA o que la esta. Alguns clubes
+            # (Quinta do Padel) sao recolhidos a mao com sessao iniciada e
+            # apagar aqui destruiria esse trabalho a cada execucao.
             continue
 
         disp = {}

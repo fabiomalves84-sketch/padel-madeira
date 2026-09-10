@@ -171,11 +171,16 @@ td.cel{padding:0 2px}
 
   // ---------- dias ----------
   const elDias = document.getElementById('dias');
-  for(let i=0;i<7;i++){
+  // quantos dias mostrar: o maximo que houver em dados, ate 15
+  const N_DIAS = Math.min(15, Math.max(7, ...D.clubes.map(c =>
+    Object.keys(c.disponibilidade || {}).length || 0)));
+  for(let i=0;i<N_DIAS;i++){
     const d = dataDe(i);
     const b = document.createElement('button');
     b.className='day'; b.type='button'; b.setAttribute('aria-selected', i===0);
-    b.innerHTML = '<span>'+(i===0?'hoje':DIAS[d.getDay()])+'</span><b>'+d.getDate()+'</b>';
+    const rotulo = i===0 ? 'hoje'
+      : (d.getDate()===1 || i===1 ? DIAS[d.getDay()]+' '+MESES[d.getMonth()] : DIAS[d.getDay()]);
+    b.innerHTML = '<span>'+rotulo+'</span><b>'+d.getDate()+'</b>';
     b.onclick = () => { diaSel=i; [...elDias.children].forEach((c,j)=>c.setAttribute('aria-selected',j===i)); render(); };
     elDias.appendChild(b);
   }
