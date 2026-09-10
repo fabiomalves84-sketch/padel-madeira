@@ -26,8 +26,14 @@ def http(url, dados=None, cabecalhos=None, metodo=None):
         corpo = urllib.parse.urlencode(dados).encode()
         h.setdefault("Content-Type", "application/x-www-form-urlencoded")
     req = urllib.request.Request(url, data=corpo, headers=h, method=metodo)
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return r.read().decode("utf-8", "replace")
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        corpo_erro = e.read().decode("utf-8", "replace")
+        raise urllib.error.HTTPError(
+            e.url, e.code, f"{e.reason} -- corpo: {corpo_erro[:2000]}", e.headers, None
+        ) from None
 
 
 # --------------------------------------------------------------- adaptadores
@@ -51,14 +57,22 @@ def playtomic(clube, data):
     return sorted(horas)
 
 
+AIRCOURTS_CLUB_IDS = {
+    # o slug nao e aceite pela API; o endpoint exige o id numerico interno do
+    # clube, descoberto varrendo o endpoint de busca por zona (--descobrir).
+    "centro-de-padel-e-lazer": "353",  # Centro de Padel e Lazer, Funchal
+    "padel-centro-canico": "486",      # Padel Centro Canico
+}
+
+
 def aircourts(clube, data):
+    """Devolve lista de horas livres 'HH:MM' ou None se falhar."""
     slug = clube.get("aircourts_slug")
-    if not slug:
+    club_id = AIRCOURTS_CLUB_IDS.get(slug)
+    if not club_id:
         return None
-    bruto = http(
-        "https://www.aircourts.com/index.php/api/search_with_club",
-        dados={"date": data, "sport": "1", "club_id": slug, "start_time": "00:00"},
-    )
+    q = urllib.parse.urlencode({"date": data, "sport": "4", "start_time": "00:00"})
+    bruto = http(f"https://www.aircourts.com/index.php/api/search_with_club/{club_id}?{q}")
     j = json.loads(bruto)
     horas = set()
     for res in j.get("results", []):
