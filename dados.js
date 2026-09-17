@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-17T20:41:02.413231+01:00",
+  "atualizado": "2026-09-17T21:52:50.579523+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1055,10 +1055,6 @@ window.DADOS = {
                   "12:00"
                 ],
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -1128,6 +1124,14 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "12:30",
+                  "14:00"
+                ],
+                [
                   "18:00",
                   "19:30"
                 ],
@@ -1141,6 +1145,10 @@ window.DADOS = {
               "nome": "Hospital da Luz",
               "ocupado": [
                 [
+                  "08:00",
+                  "09:00"
+                ],
+                [
                   "18:00",
                   "19:30"
                 ]
@@ -1150,8 +1158,8 @@ window.DADOS = {
               "nome": "Coral Puro Malte",
               "ocupado": [
                 [
-                  "10:00",
-                  "11:00"
+                  "08:00",
+                  "09:00"
                 ],
                 [
                   "14:00",
@@ -1396,10 +1404,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "18:00",
-                  "19:30"
-                ],
-                [
                   "19:30",
                   "21:00"
                 ],
@@ -1432,10 +1436,6 @@ window.DADOS = {
                 [
                   "09:00",
                   "10:00"
-                ],
-                [
-                  "18:00",
-                  "19:30"
                 ],
                 [
                   "19:30",
@@ -3118,7 +3118,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-17T20:40:53.914828+01:00"
+      "disponibilidade_em": "2026-09-17T21:52:41.942524+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -5238,7 +5238,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-17T20:41:02.413165+01:00"
+      "disponibilidade_em": "2026-09-17T21:52:50.579453+01:00"
     },
     {
       "id": "quinta-magnolia",
