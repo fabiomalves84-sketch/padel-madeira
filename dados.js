@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-18T10:23:17.806434+01:00",
+  "atualizado": "2026-09-18T12:06:17.793933+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1041,6 +1041,10 @@ window.DADOS = {
                 [
                   "08:00",
                   "09:00"
+                ],
+                [
+                  "11:30",
+                  "12:30"
                 ],
                 [
                   "18:00",
@@ -3106,7 +3110,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-18T10:23:08.422198+01:00"
+      "disponibilidade_em": "2026-09-18T12:06:07.508031+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -3379,6 +3383,10 @@ window.DADOS = {
                 [
                   "12:00",
                   "13:30"
+                ],
+                [
+                  "14:00",
+                  "15:00"
                 ],
                 [
                   "15:00",
@@ -5218,7 +5226,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-18T10:23:17.806357+01:00"
+      "disponibilidade_em": "2026-09-18T12:06:17.793862+01:00"
     },
     {
       "id": "quinta-magnolia",
