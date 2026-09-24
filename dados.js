@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-24T14:34:47.307723+01:00",
+  "atualizado": "2026-09-24T17:29:19.761645+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1563,72 +1563,6 @@ window.DADOS = {
             }
           ]
         },
-        "2026-10-01": {
-          "abertura": "08:00",
-          "fecho": "22:30",
-          "passo": 30,
-          "campos": [
-            {
-              "nome": "Grupo Sousa",
-              "ocupado": [
-                [
-                  "17:00",
-                  "18:00"
-                ],
-                [
-                  "19:30",
-                  "21:00"
-                ],
-                [
-                  "21:00",
-                  "22:30"
-                ]
-              ]
-            },
-            {
-              "nome": "Hospital da Luz",
-              "ocupado": [
-                [
-                  "18:00",
-                  "19:30"
-                ],
-                [
-                  "19:30",
-                  "21:00"
-                ],
-                [
-                  "21:00",
-                  "22:30"
-                ]
-              ]
-            },
-            {
-              "nome": "Coral Puro Malte",
-              "ocupado": [
-                [
-                  "09:00",
-                  "10:00"
-                ],
-                [
-                  "18:00",
-                  "19:00"
-                ],
-                [
-                  "19:00",
-                  "20:00"
-                ],
-                [
-                  "20:00",
-                  "21:00"
-                ],
-                [
-                  "21:00",
-                  "22:30"
-                ]
-              ]
-            }
-          ]
-        },
         "2026-10-02": {
           "abertura": "08:00",
           "fecho": "22:30",
@@ -3146,7 +3080,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-24T14:34:35.465285+01:00"
+      "disponibilidade_em": "2026-09-24T17:29:12.361494+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -5290,7 +5224,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-24T14:34:47.307643+01:00"
+      "disponibilidade_em": "2026-09-24T17:29:19.761590+01:00"
     },
     {
       "id": "quinta-magnolia",
