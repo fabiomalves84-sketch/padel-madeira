@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-09-28T00:59:58.329675+01:00",
+  "atualizado": "2026-09-28T02:00:23.443910+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -3121,7 +3121,7 @@
           ]
         }
       },
-      "disponibilidade_em": "2026-09-28T00:59:50.568910+01:00"
+      "disponibilidade_em": "2026-09-28T02:00:15.240439+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -5245,7 +5245,7 @@
           ]
         }
       },
-      "disponibilidade_em": "2026-09-28T00:59:58.329605+01:00"
+      "disponibilidade_em": "2026-09-28T02:00:23.443833+01:00"
     },
     {
       "id": "quinta-magnolia",
