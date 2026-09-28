@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-28T15:43:00.042255+01:00",
+  "atualizado": "2026-09-28T18:16:05.854443+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1022,10 +1022,6 @@ window.DADOS = {
                   "11:00"
                 ],
                 [
-                  "12:00",
-                  "15:00"
-                ],
-                [
                   "15:00",
                   "16:00"
                 ],
@@ -1067,10 +1063,6 @@ window.DADOS = {
                   "11:30"
                 ],
                 [
-                  "12:00",
-                  "15:00"
-                ],
-                [
                   "16:30",
                   "17:30"
                 ],
@@ -1091,10 +1083,6 @@ window.DADOS = {
             {
               "nome": "Coral Puro Malte",
               "ocupado": [
-                [
-                  "12:00",
-                  "15:00"
-                ],
                 [
                   "17:00",
                   "18:00"
@@ -1123,6 +1111,10 @@ window.DADOS = {
             {
               "nome": "Grupo Sousa",
               "ocupado": [
+                [
+                  "10:30",
+                  "12:00"
+                ],
                 [
                   "18:00",
                   "19:30"
@@ -1414,6 +1406,10 @@ window.DADOS = {
                 [
                   "17:30",
                   "19:30"
+                ],
+                [
+                  "19:30",
+                  "21:00"
                 ]
               ]
             }
@@ -3170,7 +3166,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-28T15:42:50.698225+01:00"
+      "disponibilidade_em": "2026-09-28T18:15:57.598606+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -5298,7 +5294,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-28T15:43:00.042179+01:00"
+      "disponibilidade_em": "2026-09-28T18:16:05.854371+01:00"
     },
     {
       "id": "quinta-magnolia",
