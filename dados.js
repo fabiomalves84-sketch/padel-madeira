@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-28T10:47:41.791774+01:00",
+  "atualizado": "2026-09-28T11:51:25.690163+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1162,6 +1162,10 @@ window.DADOS = {
                   "11:00"
                 ],
                 [
+                  "15:30",
+                  "16:30"
+                ],
+                [
                   "19:30",
                   "21:00"
                 ],
@@ -1890,6 +1894,88 @@ window.DADOS = {
           ]
         },
         "2026-10-10": {
+          "abertura": "08:00",
+          "fecho": "22:30",
+          "passo": 30,
+          "campos": [
+            {
+              "nome": "Grupo Sousa",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "14:00"
+                ],
+                [
+                  "14:00",
+                  "16:00"
+                ],
+                [
+                  "16:00",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Hospital da Luz",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "14:00"
+                ],
+                [
+                  "14:00",
+                  "16:00"
+                ],
+                [
+                  "16:00",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            },
+            {
+              "nome": "Coral Puro Malte",
+              "ocupado": [
+                [
+                  "08:00",
+                  "09:00"
+                ],
+                [
+                  "09:00",
+                  "14:00"
+                ],
+                [
+                  "14:00",
+                  "16:00"
+                ],
+                [
+                  "16:00",
+                  "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
+                ]
+              ]
+            }
+          ]
+        },
+        "2026-10-11": {
           "abertura": "08:00",
           "fecho": "22:30",
           "passo": 30,
@@ -3056,7 +3142,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-28T10:47:33.860124+01:00"
+      "disponibilidade_em": "2026-09-28T11:51:16.576004+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -5172,7 +5258,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-28T10:47:41.791707+01:00"
+      "disponibilidade_em": "2026-09-28T11:51:25.690091+01:00"
     },
     {
       "id": "quinta-magnolia",
