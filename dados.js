@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-09-30T14:14:38.703823+01:00",
+  "atualizado": "2026-09-30T20:49:23.393068+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -1018,10 +1018,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -1049,6 +1045,10 @@ window.DADOS = {
                 [
                   "19:30",
                   "21:00"
+                ],
+                [
+                  "21:00",
+                  "22:30"
                 ]
               ]
             },
@@ -1082,10 +1082,6 @@ window.DADOS = {
                 [
                   "19:30",
                   "21:00"
-                ],
-                [
-                  "21:00",
-                  "22:30"
                 ]
               ]
             }
@@ -1129,8 +1125,8 @@ window.DADOS = {
                   "11:30"
                 ],
                 [
-                  "18:00",
-                  "19:30"
+                  "16:30",
+                  "18:00"
                 ],
                 [
                   "19:30",
@@ -1148,10 +1144,6 @@ window.DADOS = {
                 [
                   "09:00",
                   "10:00"
-                ],
-                [
-                  "10:00",
-                  "11:00"
                 ],
                 [
                   "15:30",
@@ -1301,6 +1293,10 @@ window.DADOS = {
                   "11:00"
                 ],
                 [
+                  "11:00",
+                  "12:00"
+                ],
+                [
                   "14:00",
                   "16:00"
                 ],
@@ -1442,10 +1438,6 @@ window.DADOS = {
                 [
                   "16:00",
                   "17:00"
-                ],
-                [
-                  "17:00",
-                  "18:00"
                 ],
                 [
                   "18:00",
@@ -1666,10 +1658,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -1686,10 +1674,6 @@ window.DADOS = {
             {
               "nome": "Hospital da Luz",
               "ocupado": [
-                [
-                  "17:00",
-                  "18:00"
-                ],
                 [
                   "18:00",
                   "19:30"
@@ -1743,10 +1727,6 @@ window.DADOS = {
             {
               "nome": "Grupo Sousa",
               "ocupado": [
-                [
-                  "17:00",
-                  "18:00"
-                ],
                 [
                   "18:00",
                   "19:30"
@@ -1978,10 +1958,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -2106,10 +2082,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -2192,10 +2164,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "19:30",
                   "21:00"
                 ],
@@ -2265,10 +2233,6 @@ window.DADOS = {
             {
               "nome": "Grupo Sousa",
               "ocupado": [
-                [
-                  "17:00",
-                  "18:00"
-                ],
                 [
                   "19:30",
                   "21:00"
@@ -2456,10 +2420,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -2588,10 +2548,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -2674,10 +2630,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "19:30",
                   "21:00"
                 ],
@@ -2743,10 +2695,6 @@ window.DADOS = {
             {
               "nome": "Grupo Sousa",
               "ocupado": [
-                [
-                  "17:00",
-                  "18:00"
-                ],
                 [
                   "19:30",
                   "21:00"
@@ -2926,10 +2874,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -3058,10 +3002,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "18:00",
                   "19:30"
                 ],
@@ -3144,10 +3084,6 @@ window.DADOS = {
               "nome": "Grupo Sousa",
               "ocupado": [
                 [
-                  "17:00",
-                  "18:00"
-                ],
-                [
                   "19:30",
                   "21:00"
                 ],
@@ -3206,7 +3142,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-30T14:14:30.506234+01:00"
+      "disponibilidade_em": "2026-09-30T20:49:15.971856+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -4993,10 +4929,6 @@ window.DADOS = {
                   "10:00"
                 ],
                 [
-                  "10:00",
-                  "11:00"
-                ],
-                [
                   "15:30",
                   "16:30"
                 ],
@@ -5172,6 +5104,10 @@ window.DADOS = {
                   "15:00"
                 ],
                 [
+                  "15:00",
+                  "16:00"
+                ],
+                [
                   "16:00",
                   "17:00"
                 ],
@@ -5342,7 +5278,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-09-30T14:14:38.703763+01:00"
+      "disponibilidade_em": "2026-09-30T20:49:23.392991+01:00"
     },
     {
       "id": "quinta-magnolia",
