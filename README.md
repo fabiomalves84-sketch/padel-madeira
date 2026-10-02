@@ -27,16 +27,25 @@ permite: 30 dias. Cada clube tem a sua antecedência de reserva, definida em
 existirem, e avisa quando um clube deixa de ter alcance nesse dia. Corre isto antes de usares a
 app, ou agenda com launchd.
 
-A **Quinta do Padel** não pode ser atualizada por aqui: exige sessão iniciada e
-o cookie de autenticação é HttpOnly, ou seja, não é acessível a partir da
-página. Os dados que lá estão foram recolhidos com uma sessão aberta num
-browser e ficam estáticos até serem recolhidos outra vez da mesma forma.
+A **Quinta do Padel** não pode ser atualizada por aqui: exige sessão iniciada.
+Como a app é pública, não mostra dados recolhidos com a sessão de alguém;
+fica com horário, preço e link de reserva, como os outros clubes sem grelha.
+
+## Instalar
+
+- **Android:** [PadelMadeira.apk](https://github.com/fabiomalves84-sketch/padel-madeira/releases/latest/download/PadelMadeira.apk).
+  Abrir no telemóvel e permitir instalar de fontes desconhecidas.
+- **iPhone / Mac:** abrir o site no Safari, Partilhar → Adicionar ao ecrã
+  principal (no Mac, Adicionar ao Dock).
+
+As apps nativas (`padel-madeira-android`, `padel-madeira-apple`) mostram este
+site, com uma cópia offline para quando não há rede.
 
 ## Clubes
 
 | Clube | Concelho | Campos | Plataforma | Tempo real |
 |---|---|---|---|---|
-| Quinta do Padel | Funchal | 5 cobertos | MatchPoint | Sim, com sessão |
+| Quinta do Padel | Funchal | 5 cobertos | App própria | Não (exige sessão) |
 | Play Padel Madeira | Funchal | 3 | MatchPoint | Sim, público |
 | Centro de Padel e Lazer | Funchal | 3 cobertos | Aircourts | Não |
 | Jardins Panorâmicos do Lido | Funchal | 3 | Field (extinta) | Não |
@@ -58,7 +67,7 @@ e Lazer 12€, Vila Baleira 12€.
 | Clube | Plataforma | Disponibilidade |
 |---|---|---|
 | Play Padel Madeira | MatchPoint | **Sim**, grelha pública |
-| Quinta do Padel | MatchPoint | **Sim, com sessão iniciada** |
+| Quinta do Padel | App própria | Não, exige sessão iniciada |
 | Nexo Padel Club | Playtomic | Não, o site não mostra grelha |
 | Lobos Park | SIMplifica | Não, exige registo |
 | Centro de Padel e Lazer | Aircourts | Não, slots só com sessão |
