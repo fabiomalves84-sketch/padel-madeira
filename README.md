@@ -50,7 +50,7 @@ site, com uma cópia offline para quando não há rede.
 | Centro de Padel e Lazer | Funchal | 3 cobertos | Aircourts | Não |
 | Jardins Panorâmicos do Lido | Funchal | 3 | Field (extinta) | Não |
 | Quinta Magnólia | Funchal | 3 | SIMplifica | Não |
-| Padel Centro Caniço | Santa Cruz | 2 | Aircourts | Não |
+| Padel Centro Caniço | Santa Cruz | 2 | TieSports | Não (grelha pública atrás do Cloudflare) |
 | Nexo Padel Club | Câmara de Lobos | 2 | Playtomic | Não |
 | Lobos Park | Câmara de Lobos | ? | SIMplifica | Não |
 | Centro Desportivo da Madeira | Ribeira Brava | 2 | Aircourts | Não |
@@ -146,3 +146,14 @@ código.
 O `matchpoint.py` lê um endpoint interno de um site comercial. É informação
 que qualquer pessoa vê sem login, e isto é uma ferramenta de uso pessoal. Se
 alguma vez for publicado ou usado por muita gente, a conversa muda.
+
+## Playtomic e TieSports (2 de outubro de 2026)
+
+- **Playtomic** (7 clubes): `api.playtomic.io` deixou de existir e a web
+  (`app.playtomic.com`) só manda instalar a app. As vagas só se veem na app
+  Playtomic. O site diz isso e o botão abre a página do clube.
+- **TieSports** (Caniço): a grelha é pública em clubs.tiesports.com e vem de
+  `/api/booking/availability?slug=PadelCentroCanico&date=AAAA-MM-DD`, mas o
+  Cloudflare bloqueia pedidos fora de um browser e a API não tem CORS. Não se
+  contorna; o botão leva à grelha. A via limpa é pedir acesso ao clube ou ao
+  TieSports.

@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-10-02T10:29:19.553392+01:00",
+  "atualizado": "2026-10-02T10:49:42.240480+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -440,10 +440,6 @@ window.DADOS = {
                 [
                   "08:00",
                   "09:00"
-                ],
-                [
-                  "09:00",
-                  "10:00"
                 ],
                 [
                   "13:00",
@@ -2230,7 +2226,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-10-02T10:29:10.090370+01:00"
+      "disponibilidade_em": "2026-10-02T10:49:33.062652+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -2308,18 +2304,18 @@ window.DADOS = {
       ],
       "campos": 2,
       "cobertos": 0,
-      "telefone": "291602431",
+      "telefone": "291934621",
       "email": null,
-      "plataforma": "TieSports / Aircourts",
+      "plataforma": "TieSports",
       "url_reserva": "https://clubs.tiesports.com/en/madeira/PadelCentroCanico",
-      "url_site": "https://www.aircourts.com/index.php/site/view_club//padel-centro-canico",
+      "url_site": "https://clubs.tiesports.com/en/madeira/PadelCentroCanico",
       "pagamento": [
         "online"
       ],
       "pagamento_confirmado": true,
       "preco": {
-        "min": 8,
-        "max": 8,
+        "min": 10,
+        "max": 10,
         "unidade": "hora (campo inteiro)",
         "confirmado": true
       },
@@ -4342,7 +4338,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-10-02T10:29:19.553319+01:00"
+      "disponibilidade_em": "2026-10-02T10:49:42.240404+01:00"
     },
     {
       "id": "quinta-magnolia",

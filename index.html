@@ -280,6 +280,16 @@ td.cel{padding:0 2px}
   }
 
   // ---------- resumo para clubes sem disponibilidade publicada ----------
+  // O que dizer sobre onde ver as vagas, conforme a plataforma do clube.
+  function avisoSemGrelha(clube){
+    const p = clube.plataforma || '';
+    if(/Playtomic/.test(p))
+      return 'As vagas deste clube só aparecem na app Playtomic.';
+    if(/TieSports/.test(p))
+      return 'As vagas estão na grelha do TieSports, no botão abaixo.';
+    return 'Este clube não publica disponibilidade. Confirma na plataforma dele.';
+  }
+
   function resumoHorario(clube, data){
     if(!clube.horario)
       return '<div class="aviso">'+(clube.nota_clube || 'Horário não publicado.')+'</div>';
@@ -291,37 +301,7 @@ td.cel{padding:0 2px}
     if(diaSel===0 && agoraM >= fimMin)
       return '<div class="fechado">Já fechou por hoje (encerra às '+fecho+').</div>';
     return '<div class="horas">Aberto das <b>'+hr[0]+'</b> às <b>'+fecho+'</b></div>'+
-           '<div class="aviso">Este clube não publica disponibilidade. '+
-           'Tens de confirmar se há campo livre na plataforma dele.</div>';
-  }
-
-  // ---------- grelha para clubes sem disponibilidade publicada ----------
-  function grelhaIncerta(clube, data, agoraMin, eHoje){
-    if(!clube.horario)
-      return '<div class="aviso">'+(clube.nota_clube || 'Horário não publicado.')+'</div>';
-    const hr = clube.horario[data.getDay()];
-    if(!hr) return '<div class="fechado">Fechado neste dia.</div>';
-    if(soLivres) return '<div class="fechado">Sem vagas confirmadas publicamente neste clube.</div>';
-
-    const ini = min(hr[0]);
-    const fim = hr[1]==='24:00' ? 1440 : min(hr[1]);
-    const nCampos = clube.campos || 1;
-    let h = '<div class="gridwrap"><table class="grelha"><thead><tr><th class="hcol"></th>';
-    for(let i=0;i<nCampos;i++) h += '<th>Campo '+(i+1)+'</th>';
-    h += '</tr></thead><tbody>';
-
-    for(let t=ini; t+duracao<=fim; t+=30){
-      const passado = eHoje && t <= agoraMin;
-      h += '<tr><td class="hora">'+hhmm(t)+'</td>';
-      for(let i=0;i<nCampos;i++){
-        h += '<td class="cel"><button data-t="'+t+'" data-c="'+i+'" data-e="incerto"'+
-             (passado ? ' class="passado" disabled>passou' : ' class="incerto">confirmar')+
-             '</button></td>';
-      }
-      h += '</tr>';
-    }
-    return h + '</tbody></table></div>'+
-      '<div class="aviso">A plataforma deste clube não publica a ocupação. Confirma antes de reservar.</div>';
+           '<div class="aviso">'+avisoSemGrelha(clube)+'</div>';
   }
 
   // ---------- render ----------
@@ -368,15 +348,19 @@ td.cel{padding:0 2px}
         if(temNoutrosDias){
           const ate = Object.keys(c.disponibilidade).sort().pop();
           const d2 = new Date(ate+'T12:00:00');
-          h += grelhaIncerta(c, data, agoraMin, eHoje);
+          h += resumoHorario(c, data);
           h += '<div class="aviso">Este clube só publica disponibilidade até '+
                d2.getDate()+' '+MESES[d2.getMonth()]+'. Para lá disso, só o horário.</div>';
         } else {
-          h += grelhaIncerta(c, data, agoraMin, eHoje);
+          h += resumoHorario(c, data);
         }
       }
       const plat = c.plataforma.split(' /')[0].split(' (')[0];
-      const rot = /App pr/.test(plat) ? 'Abrir reservas do clube' : 'Abrir '+plat;
+      const rot = /App pr/.test(plat) ? 'Abrir reservas do clube'
+        : g ? 'Reservar no '+plat
+        : /Playtomic/.test(plat) ? 'Ver vagas na app Playtomic'
+        : /TieSports/.test(plat) ? 'Ver vagas no TieSports'
+        : 'Abrir '+plat;
       h += '<a class="abrir" href="'+c.url_reserva+'" target="_blank" rel="noopener">'+rot+' →</a>';
 
       card.innerHTML = h;
