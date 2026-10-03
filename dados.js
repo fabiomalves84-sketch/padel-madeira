@@ -1,6 +1,6 @@
 // Gerado por atualizar.py. Nao editar a mao.
 window.DADOS = {
-  "atualizado": "2026-10-03T14:57:32.925430+01:00",
+  "atualizado": "2026-10-03T15:57:56.683135+01:00",
   "nota": "12 espaços de padel na Madeira e Porto Santo. Dados dos clubes no Aircourts vêm da API deles, fonte primária. Os restantes têm campos por confirmar.",
   "clubes": [
     {
@@ -654,8 +654,16 @@ window.DADOS = {
                   "18:00"
                 ],
                 [
+                  "18:00",
+                  "19:05"
+                ],
+                [
                   "19:05",
                   "20:10"
+                ],
+                [
+                  "20:10",
+                  "21:15"
                 ],
                 [
                   "21:15",
@@ -702,6 +710,18 @@ window.DADOS = {
                 [
                   "09:00",
                   "18:00"
+                ],
+                [
+                  "18:10",
+                  "19:15"
+                ],
+                [
+                  "19:55",
+                  "21:00"
+                ],
+                [
+                  "21:25",
+                  "22:30"
                 ]
               ]
             }
@@ -724,6 +744,10 @@ window.DADOS = {
                   "12:05"
                 ],
                 [
+                  "12:15",
+                  "13:20"
+                ],
+                [
                   "13:20",
                   "14:25"
                 ],
@@ -740,6 +764,14 @@ window.DADOS = {
                   "17:50"
                 ],
                 [
+                  "17:50",
+                  "18:55"
+                ],
+                [
+                  "19:30",
+                  "20:35"
+                ],
+                [
                   "21:15",
                   "22:20"
                 ]
@@ -749,6 +781,10 @@ window.DADOS = {
               "nome": "Hospital da Luz",
               "ocupado": [
                 [
+                  "09:55",
+                  "11:00"
+                ],
+                [
                   "11:00",
                   "12:05"
                 ],
@@ -757,8 +793,12 @@ window.DADOS = {
                   "13:20"
                 ],
                 [
-                  "18:00",
-                  "19:05"
+                  "15:40",
+                  "16:45"
+                ],
+                [
+                  "18:55",
+                  "20:00"
                 ],
                 [
                   "21:15",
@@ -770,16 +810,12 @@ window.DADOS = {
               "nome": "Coral Puro Malte",
               "ocupado": [
                 [
-                  "16:00",
-                  "17:05"
+                  "15:40",
+                  "16:45"
                 ],
                 [
                   "19:05",
                   "20:10"
-                ],
-                [
-                  "21:00",
-                  "22:05"
                 ]
               ]
             }
@@ -792,11 +828,21 @@ window.DADOS = {
           "campos": [
             {
               "nome": "Grupo Sousa",
-              "ocupado": []
+              "ocupado": [
+                [
+                  "10:55",
+                  "12:00"
+                ]
+              ]
             },
             {
               "nome": "Hospital da Luz",
-              "ocupado": []
+              "ocupado": [
+                [
+                  "10:55",
+                  "12:00"
+                ]
+              ]
             },
             {
               "nome": "Coral Puro Malte",
@@ -2183,7 +2229,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-10-03T14:57:16.672655+01:00"
+      "disponibilidade_em": "2026-10-03T15:57:49.271486+01:00"
     },
     {
       "id": "centro-padel-lazer",
@@ -4263,7 +4309,7 @@ window.DADOS = {
           ]
         }
       },
-      "disponibilidade_em": "2026-10-03T14:57:32.925356+01:00"
+      "disponibilidade_em": "2026-10-03T15:57:56.683075+01:00"
     },
     {
       "id": "quinta-magnolia",
